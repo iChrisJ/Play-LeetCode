@@ -9,14 +9,18 @@ namespace CSharp._0020_Valid_Parentheses
 			Stack<char> stack = new Stack<char>();
 			for (int i = 0; i < s.Length; i++)
 			{
-				if (stack.Count != 0 && (((char)stack.Peek() == '(' && s[i] == ')')
-					|| ((char)stack.Peek() == '[' && s[i] == ']')
-					|| ((char)stack.Peek() == '{' && s[i] == '}')))
-					stack.Pop();
-				else
+				if (s[i] == '(' || s[i] == '[' || s[i] == '{')
 					stack.Push(s[i]);
+				else
+				{
+					if (stack.Count == 0)
+						return false;
+					else if ((stack.Peek() == '(' && s[i] == ')') || (stack.Peek() == '[' && s[i] == ']') || (stack.Peek() == '{' && s[i] == '}'))
+						stack.Pop();
+					else
+						return false;
+				}
 			}
-
 			return stack.Count == 0;
 		}
 	}
