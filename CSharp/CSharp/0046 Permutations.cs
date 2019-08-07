@@ -41,10 +41,10 @@ namespace CSharp._0046_Permutations
 			}
 		}
 
-		public static void Main(string[] args)
-		{
-			int[] aa = { 1, 2, 3 };
-			var aaa = new Solution().Permute(aa);
-		}
+		//public static void Main(string[] args)
+		//{
+		//	int[] aa = { 1, 2, 3 };
+		//	var aaa = new Solution().Permute(aa);
+		//}
 	}
 }
