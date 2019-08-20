@@ -2,10 +2,11 @@
 
 namespace CSharp._0198_House_Robber
 {
+	/// <summary>
+	/// Memory Search
+	/// </summary>
 	public class Solution
 	{
-		#region 记忆化搜索
-
 		private int[] memo;
 		public int Rob(int[] nums)
 		{
@@ -29,12 +30,14 @@ namespace CSharp._0198_House_Robber
 			memo[index] = res;
 			return res;
 		}
-		#endregion 记忆化搜索
+	}
 
-
-		#region 动态规划
-
-		public int Rob2(int[] nums)
+	/// <summary>
+	/// Dynamic Programming
+	/// </summary>
+	public class Solution2
+	{
+		public int Rob(int[] nums)
 		{
 			if (nums.Length == 0)
 				return 0;
@@ -48,7 +51,7 @@ namespace CSharp._0198_House_Robber
 			return memo[0];
 		}
 
-		public int Rob3(int[] nums)
+		public int Rob2(int[] nums)
 		{
 			if (nums.Length == 0)
 				return 0;
@@ -60,6 +63,5 @@ namespace CSharp._0198_House_Robber
 				memo[i] = Math.Max(memo[i - 1], nums[i] + (i - 2 >= 0 ? memo[i - 2] : 0));
 			return memo[nums.Length - 1];
 		}
-		#endregion 动态规划
 	}
 }
