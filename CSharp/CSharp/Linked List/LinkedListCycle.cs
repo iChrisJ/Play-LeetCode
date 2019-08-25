@@ -72,11 +72,11 @@ namespace CSharp.Linked_List
 			return head;
 		}
 
-		static void Main()
-		{
-			ListNode head = CreateLinkedList(new int[] { -4 });
-			ListNode aa = new LinkedListCycle_Solution().DetectCycle(head);
-		}
+		//static void Main()
+		//{
+		//	ListNode head = CreateLinkedList(new int[] { -4 });
+		//	ListNode aa = new LinkedListCycle_Solution().DetectCycle(head);
+		//}
 	}
 
 	class LinkedListCycle_Solution2
