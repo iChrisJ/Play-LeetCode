@@ -16,7 +16,6 @@
 
 			if (node.next == null)
 				node = null;
-				node = null;
 
 			ListNode next = node.next;
 			node.val = next.val;
