@@ -32,4 +32,30 @@ namespace CSharp._0238_Product_of_Array_Except_Self
 			return nums;
 		}
 	}
+
+	public class Solution2
+	{
+		public int[] ProductExceptSelf(int[] nums)
+		{
+			int[] res = new int[nums.Length];
+
+			if (nums == null || nums.Length == 0)
+				return res;
+
+			int m = 1;
+			for (int i = 0; i < nums.Length; i++)
+			{
+				res[i] = m;
+				m = m * nums[i];
+			}
+
+			m = 1;
+			for (int i = nums.Length - 1; i >= 0; i--)
+			{
+				res[i] *= m;
+				m = m * nums[i];
+			}
+			return res;
+		}
+	}
 }
