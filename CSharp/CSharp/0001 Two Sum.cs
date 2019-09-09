@@ -23,12 +23,5 @@ namespace CSharp._0001_Two_Sum
 
 			return null;
 		}
-
-		//static void Main(string[] args)
-		//{
-		//	var a = new Solution().TwoSum(new int[] { 2, 7, 11, 15 }, 9);
-		//}
 	}
-
-
 }
