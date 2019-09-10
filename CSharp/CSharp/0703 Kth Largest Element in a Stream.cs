@@ -118,16 +118,16 @@ namespace CSharp._0703_Kth_Largest_Element_in_a_Stream
 			}
 		}
 
-		static void Main()
-		{
-			int k = 3;
-			int[] arr = new int[] { 4, 5, 8, 2 };
-			KthLargest kthLargest = new KthLargest(3, arr);
-			kthLargest.Add(3);   // returns 4
-			kthLargest.Add(5);   // returns 5
-			kthLargest.Add(10);  // returns 5
-			kthLargest.Add(9);   // returns 8
-			kthLargest.Add(4);   // returns 8
-		}
+		//static void Main()
+		//{
+		//	int k = 3;
+		//	int[] arr = new int[] { 4, 5, 8, 2 };
+		//	KthLargest kthLargest = new KthLargest(3, arr);
+		//	kthLargest.Add(3);   // returns 4
+		//	kthLargest.Add(5);   // returns 5
+		//	kthLargest.Add(10);  // returns 5
+		//	kthLargest.Add(9);   // returns 8
+		//	kthLargest.Add(4);   // returns 8
+		//}
 	}
 }

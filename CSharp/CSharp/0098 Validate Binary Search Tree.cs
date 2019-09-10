@@ -33,4 +33,25 @@ namespace CSharp._0098_Validate_Binary_Search_Tree
 			InOrder(node.right, list);
 		}
 	}
+
+	public class Solution2
+	{
+		public bool IsValidBST(TreeNode root)
+		{
+			return IsValid(root, null, null);
+		}
+
+		private bool IsValid(TreeNode node, int? min, int? max)
+		{
+			if (node == null)
+				return true;
+			if (min != null && node.val <= min)
+				return false;
+			if (max != null && node.val >= max)
+				return false;
+
+			return IsValid(node.left, min, node.val)
+				&& IsValid(node.right, node.val, max);
+		}
+	}
 }

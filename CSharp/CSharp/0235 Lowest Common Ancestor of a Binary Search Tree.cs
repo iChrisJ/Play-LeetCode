@@ -22,4 +22,21 @@ namespace CSharp._0235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree
 				return LowestCommonAncestor(root.right, p, q);
 		}
 	}
+
+	public class Solution2
+	{
+		public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+		{
+			while (root != null)
+			{
+				if (root.val < Math.Min(p.val, q.val))
+					root = root.right;
+				else if (root.val > Math.Max(p.val, q.val))
+					root = root.left;
+				else
+					return root;
+			}
+			return root;
+		}
+	}
 }
