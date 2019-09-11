@@ -12,6 +12,7 @@ namespace CSharp._0102_Binary_Tree_Level_Order_Traversal
 
 	public class Solution
 	{
+		// BFS
 		public IList<IList<int>> LevelOrder(TreeNode root)
 		{
 			IList<IList<int>> res = new List<IList<int>>();
@@ -35,6 +36,30 @@ namespace CSharp._0102_Binary_Tree_Level_Order_Traversal
 				res.Add(nodes);
 			}
 			return res;
+		}
+	}
+
+	public class Solution2
+	{
+		// DFS
+		public IList<IList<int>> LevelOrder(TreeNode root)
+		{
+			IList<IList<int>> res = new List<IList<int>>();
+			LevelOrderDFS(root, 1, res);
+			return res;
+		}
+
+		private void LevelOrderDFS(TreeNode node, int level, IList<IList<int>> res)
+		{
+			if (node == null)
+				return;
+
+			if (res.Count >= level)
+				res[level - 1].Add(node.val);
+			else
+				res.Add(new List<int>() { node.val });
+			LevelOrderDFS(node.left, level + 1, res);
+			LevelOrderDFS(node.right, level + 1, res);
 		}
 	}
 }
