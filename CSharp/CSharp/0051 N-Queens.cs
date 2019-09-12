@@ -56,10 +56,5 @@ namespace CSharp._0051_N_Queens
 			}
 			return board;
 		}
-
-		//public static void Main()
-		//{
-		//	var res = new Solution().SolveNQueens(4);
-		//}
 	}
 }
