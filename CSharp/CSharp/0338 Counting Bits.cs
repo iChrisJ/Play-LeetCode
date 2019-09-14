@@ -1,0 +1,14 @@
+﻿namespace CSharp._0338_Counting_Bits
+{
+	public class Solution
+	{
+		public int[] CountBits(int num)
+		{
+			int[] res = new int[num + 1];
+			for (int i = 1; i <= num; i++)
+				res[i] = res[i & (i - 1)] + 1;
+
+			return res;
+		}
+	}
+}
