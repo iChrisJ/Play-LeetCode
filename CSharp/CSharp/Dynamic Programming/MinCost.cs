@@ -13,9 +13,9 @@ namespace CSharp.Dynamic_Programming
 	{
 		public int FindMinCost(string str1, string str2, int ic, int dc, int rc)
 		{
-			///假设str1的长度为M, str2的长度为N. 首先生成大小为(M+1)＊(N+1)的矩阵dp,
-			///dpp[i][j]的值代表str1[0..i-1]编辑成str2[0..j-1]的最小代价.
-			///比如, str1="ab12cd3", str2="abcdf", ic=5, dc=3, rc=2
+			/// 假设str1的长度为M, str2的长度为N. 首先生成大小为(M+1)＊(N+1)的矩阵dp,
+			/// dp[i][j]的值代表str1[0..i-1]编辑成str2[0..j-1]的最小代价.
+			/// 比如, str1="ab12cd3", str2="abcdf", ic=5, dc=3, rc=2
 			/// dp如下:
 			///			''	'a'	'b'	'c'	'd'	'f'
 			///		''	0	5	10	15	20	25
@@ -62,7 +62,6 @@ namespace CSharp.Dynamic_Programming
 					dp[i, j] = Math.Min(Math.Min(dcCost, icCost), rcCost);
 				}
 			}
-
 			return dp[str1.Length, str2.Length];
 		}
 	}

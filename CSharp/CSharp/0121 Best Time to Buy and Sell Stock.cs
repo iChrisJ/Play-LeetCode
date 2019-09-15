@@ -33,4 +33,21 @@ namespace CSharp._0121_Best_Time_to_Buy_and_Sell_Stock
 			return maxValue;
 		}
 	}
+
+	public class Solution2
+	{
+		// Time Complexity: O(n)
+		// Space Complexity: O(1)
+		public int MaxProfit(int[] prices)
+		{
+			int maxValue = 0;
+			int minPrice = int.MaxValue;
+			foreach (int price in prices)
+			{
+				minPrice = Math.Min(minPrice, price);
+				maxValue = Math.Max(maxValue, price - minPrice);
+			}
+			return maxValue;
+		}
+	}
 }
