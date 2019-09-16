@@ -1,4 +1,6 @@
-﻿namespace CSharp._0100_Same_Tree
+﻿using System.Collections.Generic;
+
+namespace CSharp._0100_Same_Tree
 {
 	public class TreeNode
 	{
@@ -7,6 +9,8 @@
 		public TreeNode right;
 		public TreeNode(int x) { val = x; }
 	}
+
+	// DFS
 	public class Solution
 	{
 		public bool IsSameTree(TreeNode p, TreeNode q)
@@ -21,6 +25,39 @@
 				return true;
 			else
 				return false;
+		}
+	}
+
+	// BFS
+	public class Solution2
+	{
+		public bool IsSameTree(TreeNode p, TreeNode q)
+		{
+			Queue<TreeNode> pQueue = new Queue<TreeNode>();
+			pQueue.Enqueue(p);
+			Queue<TreeNode> qQueue = new Queue<TreeNode>();
+			qQueue.Enqueue(q);
+
+			while (pQueue.Count != 0 && qQueue.Count != 0)
+			{
+				TreeNode pTop = pQueue.Dequeue();
+				TreeNode qTop = qQueue.Dequeue();
+
+				if (pTop == null && qTop == null)
+					continue;
+
+				if (pTop != null && qTop != null && pTop.val == qTop.val)
+				{
+					pQueue.Enqueue(pTop.left);
+					pQueue.Enqueue(pTop.right);
+					qQueue.Enqueue(qTop.left);
+					qQueue.Enqueue(qTop.right);
+					continue;
+				}
+				return false;
+			}
+
+			return pQueue.Count == 0 && qQueue.Count == 0;
 		}
 	}
 }
