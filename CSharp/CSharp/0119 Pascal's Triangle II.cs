@@ -4,6 +4,7 @@ namespace CSharp._0119_Pascal_s_Triangle_II
 {
 	public class Solution
 	{
+		/// Recursive
 		public IList<int> GetRow(int rowIndex)
 		{
 			if (rowIndex == 0)
@@ -20,10 +21,31 @@ namespace CSharp._0119_Pascal_s_Triangle_II
 			}
 			return res;
 		}
+	}
 
-		//public static void Main(string[] args)
-		//{
-		//	var a = new Solution().GetRow(4);
-		//}
+	public class Solution2
+	{
+		// Iteration 
+		public IList<int> GetRow(int rowIndex)
+		{
+			IList<IList<int>> res = new List<IList<int>>(2) { new List<int>(1), new List<int>(2) };
+			int i = 0;
+			while (i <= rowIndex)
+			{
+				IList<int> curLine = new List<int>(i + 1);
+				for (int j = 0; j <= i; j++)
+				{
+					if (j == 0 || j == i)
+						curLine.Add(1);
+					else
+						curLine.Add(res[(i - 1) % 2][j - 1] + res[(i - 1) % 2][j]);
+				}
+
+				res[i % 2] = curLine;
+				i++;
+			}
+
+			return res[rowIndex % 2];
+		}
 	}
 }
