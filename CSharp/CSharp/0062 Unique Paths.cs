@@ -44,5 +44,19 @@
 
 			return dp[m - 1, n - 1];
 		}
+
+		/// Dynamic Programming
+		/// Time Complexity: O(m * n)
+		/// Space Complexity: O(m)
+		public int UniquePaths2(int m, int n)
+		{
+			int[] dp = new int[m];
+			for (int i = 0; i < m; i++)
+				dp[i] = 1;
+			for (int i = 1; i < n; i++)
+				for (int j = 1; j < m; j++)
+					dp[j] = dp[j - 1] + dp[j];
+			return dp[m - 1];
+		}
 	}
 }
