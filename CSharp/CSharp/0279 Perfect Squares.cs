@@ -22,12 +22,6 @@ namespace CSharp._0279_Perfect_Squares
 				res = Math.Min(res, 1 + CalcNumSquares(n - i * i));
 			return res;
 		}
-
-		//static void Main()
-		//{
-		//	new Solution().NumSquares(12);
-		//}
-
 	}
 
 	public class Solution2
@@ -64,12 +58,11 @@ namespace CSharp._0279_Perfect_Squares
 	/// Space Complexity: O(n)
 	public class Solution3
 	{
-		private int[] memo;
 		public int NumSquares(int n)
 		{
 			if (n <= 0)
 				return 0;
-			memo = new int[n + 1];
+			int[] memo = new int[n + 1];
 
 			for (int i = 0; i <= n; i++)
 				memo[i] = i;
