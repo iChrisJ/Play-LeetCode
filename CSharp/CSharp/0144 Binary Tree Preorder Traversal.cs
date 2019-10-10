@@ -27,8 +27,11 @@ namespace CSharp._0144_Binary_Tree_Preorder_Traversal
 			Preorder(node.left, list);
 			Preorder(node.right, list);
 		}
+	}
 
-		public IList<int> PreorderTraversal2(TreeNode root)
+	public class Solution2
+	{
+		public IList<int> PreorderTraversal(TreeNode root)
 		{
 			IList<int> res = new List<int>();
 			Stack<TreeNode> stack = new Stack<TreeNode>();

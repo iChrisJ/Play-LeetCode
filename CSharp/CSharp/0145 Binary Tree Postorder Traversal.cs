@@ -26,7 +26,10 @@ namespace CSharp._0145_Binary_Tree_Postorder_Traversal
 			PostOrder(node.right, list);
 			list.Add(node.val);
 		}
+	}
 
+	public class Solution2
+	{
 		struct Command
 		{
 			public char c;
@@ -38,7 +41,7 @@ namespace CSharp._0145_Binary_Tree_Postorder_Traversal
 			}
 		}
 
-		public IList<int> PostorderTraversal2(TreeNode root)
+		public IList<int> PostorderTraversal(TreeNode root)
 		{
 			IList<int> res = new List<int>();
 
@@ -52,11 +55,11 @@ namespace CSharp._0145_Binary_Tree_Postorder_Traversal
 					res.Add(top.node.val);
 				else
 				{
-					if (top.node.left != null)
-						stack.Push(new Command('g', top.node.left));
+					stack.Push(new Command('p', top.node));
 					if (top.node.right != null)
 						stack.Push(new Command('g', top.node.right));
-					stack.Push(new Command('p', top.node));
+					if (top.node.left != null)
+						stack.Push(new Command('g', top.node.left));
 				}
 			}
 			return res;

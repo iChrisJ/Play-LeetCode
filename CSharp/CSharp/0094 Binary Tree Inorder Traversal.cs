@@ -53,4 +53,33 @@ namespace CSharp._0094_Binary_Tree_Inorder_Traversal
 			return res;
 		}
 	}
+
+	public class Solution2
+	{
+		public IList<int> InorderTraversal(TreeNode root)
+		{
+			IList<int> res = new List<int>();
+			if (root == null)
+				return res;
+
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+
+			TreeNode cur = root;
+			while (cur != null || stack.Count != 0)
+			{
+				if (cur != null)
+				{
+					stack.Push(cur);
+					cur = cur.left;
+				}
+				else
+				{
+					cur = stack.Pop();
+					res.Add(cur.val);
+					cur = cur.right;
+				}
+			}
+			return res;
+		}
+	}
 }
