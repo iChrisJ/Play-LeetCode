@@ -1,4 +1,6 @@
-﻿namespace CSharp._0211_Add_and_Search_Word___Data_structure_design
+﻿using System.Collections.Generic;
+
+namespace CSharp._0211_Add_and_Search_Word___Data_structure_design
 {
 	public class WordDictionary
 	{
@@ -71,6 +73,71 @@
 				}
 			}
 			return node.IsWord;
+		}
+	}
+
+	public class WordDictionary2
+	{
+		private class Node
+		{
+			public bool IsWord { get; set; }
+			public IDictionary<char, Node> Next { get; private set; }
+
+			public Node(bool isWord)
+			{
+				IsWord = isWord;
+				Next = new Dictionary<char, Node>();
+			}
+
+			public Node() : this(false) { }
+		}
+
+		private Node root;
+
+		/** Initialize your data structure here. */
+		public WordDictionary2()
+		{
+			root = new Node();
+		}
+
+		/** Adds a word into the data structure. */
+		public void AddWord(string word)
+		{
+			Node cur = root;
+			for (int i = 0; i < word.Length; i++)
+			{
+				if (!cur.Next.ContainsKey(word[i]))
+					cur.Next.Add(word[i], new Node());
+				cur = cur.Next[word[i]];
+			}
+
+			if (!cur.IsWord)
+				cur.IsWord = true;
+		}
+
+		/** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+		public bool Search(string word)
+		{
+			return Match(root, word, 0);
+		}
+
+		private bool Match(Node node, string word, int index)
+		{
+			if (index == word.Length)
+				return node.IsWord;
+
+			if (word[index] != '.')
+				return node.Next.ContainsKey(word[index])
+					? Match(node.Next[word[index]], word, index + 1) : false;
+			else
+			{
+				foreach (char key in node.Next.Keys)
+				{
+					if (Match(node.Next[key], word, index + 1))
+						return true;
+				}
+				return false;
+			}
 		}
 	}
 }
