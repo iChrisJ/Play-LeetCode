@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0100_Same_Tree
+namespace LeetCodeInCS._0100_Same_Tree
 {
 	public class TreeNode
 	{

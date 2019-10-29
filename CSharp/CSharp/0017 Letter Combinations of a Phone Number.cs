@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0017_Letter_Combinations_of_a_Phone_Number
+namespace LeetCodeInCS._0017_Letter_Combinations_of_a_Phone_Number
 {
 	public class Solution
 	{

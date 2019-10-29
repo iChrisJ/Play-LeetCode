@@ -1,4 +1,4 @@
-﻿namespace CSharp._0058_Length_of_Last_Word
+﻿namespace LeetCodeInCS._0058_Length_of_Last_Word
 {
 	public class Solution
 	{

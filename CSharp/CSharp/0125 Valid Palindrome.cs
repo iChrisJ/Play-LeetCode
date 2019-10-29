@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp._0125_Valid_Palindrome
+namespace LeetCodeInCS._0125_Valid_Palindrome
 {
 	public class Solution
 	{

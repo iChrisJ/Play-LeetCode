@@ -1,4 +1,4 @@
-﻿namespace CSharp.Binary_Search
+﻿namespace LeetCodeInCS.Binary_Search
 {
 	/// <summary>
 	/// 给定一个有序数组arr, 再给定一个整数num, 请在arr中找到num这个数出现的最左边的位置

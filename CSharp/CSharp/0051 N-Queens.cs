@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp._0051_N_Queens
+namespace LeetCodeInCS._0051_N_Queens
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Linked_List
+namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 判断一个链表是否为回文结构

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp.Binary_Search
+namespace LeetCodeInCS.Binary_Search
 {
 	/// <summary>
 	/// 给定一个有序数组arr, 其中不含有重复元素, 请找到满足arr[i]==i条件的最左的位置. 如果所有位置上的数都不满足条件, 返回-1.

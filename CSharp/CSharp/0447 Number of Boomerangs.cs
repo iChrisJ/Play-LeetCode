@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0447_Number_of_Boomerangs
+namespace LeetCodeInCS._0447_Number_of_Boomerangs
 {
 	public class Solution
 	{

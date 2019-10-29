@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0071_Simplify_Path
+namespace LeetCodeInCS._0071_Simplify_Path
 {
 	public class Solution
 	{

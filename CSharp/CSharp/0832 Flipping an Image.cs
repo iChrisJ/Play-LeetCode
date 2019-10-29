@@ -1,4 +1,4 @@
-﻿namespace CSharp._0832_Flipping_an_Image
+﻿namespace LeetCodeInCS._0832_Flipping_an_Image
 {
 	public class Solution
 	{

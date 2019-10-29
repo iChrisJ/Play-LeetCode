@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0703_Kth_Largest_Element_in_a_Stream
+namespace LeetCodeInCS._0703_Kth_Largest_Element_in_a_Stream
 {
 	public class KthLargest
 	{

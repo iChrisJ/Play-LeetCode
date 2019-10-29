@@ -1,4 +1,4 @@
-﻿namespace CSharp._0083_Remove_Duplicates_from_Sorted_List
+﻿namespace LeetCodeInCS._0083_Remove_Duplicates_from_Sorted_List
 {
 	/**
 	 * Definition for singly-linked list.

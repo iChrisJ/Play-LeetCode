@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0733_Flood_Fill
+namespace LeetCodeInCS._0733_Flood_Fill
 {
 	public class Solution
 	{

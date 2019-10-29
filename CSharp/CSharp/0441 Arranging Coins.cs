@@ -1,4 +1,4 @@
-﻿namespace CSharp._0441_Arranging_Coins
+﻿namespace LeetCodeInCS._0441_Arranging_Coins
 {
 	public class Solution
 	{

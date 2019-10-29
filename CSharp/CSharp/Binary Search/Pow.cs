@@ -1,4 +1,4 @@
-﻿namespace CSharp.Binary_Search
+﻿namespace LeetCodeInCS.Binary_Search
 {
 	/// <summary>
 	/// 如果更快的求一个整数k的N次方. 

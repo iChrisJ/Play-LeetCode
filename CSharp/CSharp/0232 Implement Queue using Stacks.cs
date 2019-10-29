@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0232_Implement_Queue_using_Stacks
+namespace LeetCodeInCS._0232_Implement_Queue_using_Stacks
 {
 	public class MyQueue
 	{

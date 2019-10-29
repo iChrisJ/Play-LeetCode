@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0430_Flatten_a_Multilevel_Doubly_Linked_List
+namespace LeetCodeInCS._0430_Flatten_a_Multilevel_Doubly_Linked_List
 {
 	// Definition for a Node.
 	public class Node

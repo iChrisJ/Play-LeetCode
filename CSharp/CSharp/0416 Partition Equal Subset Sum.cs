@@ -1,4 +1,4 @@
-﻿namespace CSharp._0416_Partition_Equal_Subset_Sum
+﻿namespace LeetCodeInCS._0416_Partition_Equal_Subset_Sum
 {
 	public class Solution
 	{

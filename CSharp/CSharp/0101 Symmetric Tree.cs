@@ -1,4 +1,4 @@
-﻿namespace CSharp._0101_Symmetric_Tree
+﻿namespace LeetCodeInCS._0101_Symmetric_Tree
 {
 	public class TreeNode
 	{

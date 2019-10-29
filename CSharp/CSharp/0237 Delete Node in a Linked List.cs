@@ -1,4 +1,4 @@
-﻿namespace CSharp._0237_Delete_Node_in_a_Linked_List
+﻿namespace LeetCodeInCS._0237_Delete_Node_in_a_Linked_List
 {
 	public class ListNode
 	{

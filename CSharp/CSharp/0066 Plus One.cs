@@ -1,4 +1,4 @@
-﻿namespace CSharp._0066_Plus_One
+﻿namespace LeetCodeInCS._0066_Plus_One
 {
 	public class Solution
 	{

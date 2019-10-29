@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0064_Minimum_Path_Sum
+namespace LeetCodeInCS._0064_Minimum_Path_Sum
 {
 	public class Solution
 	{

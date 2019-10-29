@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0109_Convert_Sorted_List_to_Binary_Search_Tree
+namespace LeetCodeInCS._0109_Convert_Sorted_List_to_Binary_Search_Tree
 {
 
 	public class ListNode

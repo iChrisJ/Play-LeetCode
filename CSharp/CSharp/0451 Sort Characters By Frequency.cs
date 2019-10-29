@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0451_Sort_Characters_By_Frequency
+namespace LeetCodeInCS._0451_Sort_Characters_By_Frequency
 {
 	public class Solution
 	{

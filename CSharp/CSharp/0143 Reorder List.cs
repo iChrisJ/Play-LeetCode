@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0143_Reorder_List
+namespace LeetCodeInCS._0143_Reorder_List
 {
 	public class ListNode
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0299_Bulls_and_Cows
+namespace LeetCodeInCS._0299_Bulls_and_Cows
 {
 	public class Solution
 	{

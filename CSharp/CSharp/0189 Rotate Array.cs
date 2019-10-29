@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0189_Rotate_Array
+namespace LeetCodeInCS._0189_Rotate_Array
 {
 	public class Solution
 	{

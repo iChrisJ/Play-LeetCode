@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Dynamic_Programming
+namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 给定一个矩阵grid, 从左上角开始每次只能向右或者向下走，最后到达右下角的位置，

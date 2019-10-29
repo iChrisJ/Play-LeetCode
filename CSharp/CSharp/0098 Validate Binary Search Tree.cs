@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0098_Validate_Binary_Search_Tree
+namespace LeetCodeInCS._0098_Validate_Binary_Search_Tree
 {
 	public class TreeNode
 	{

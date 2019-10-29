@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace CSharp._0307_Range_Sum_Query___Mutable
+namespace LeetCodeInCS._0307_Range_Sum_Query___Mutable
 {
 	public class NumArray
 	{

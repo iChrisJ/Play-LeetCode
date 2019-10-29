@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0208_Implement_Trie__Prefix_Tree_
+namespace LeetCodeInCS._0208_Implement_Trie__Prefix_Tree_
 {
 	public class Trie
 	{

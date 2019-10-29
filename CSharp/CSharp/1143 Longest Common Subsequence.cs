@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._1143_Longest_Common_Subsequence
+namespace LeetCodeInCS._1143_Longest_Common_Subsequence
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Dynamic_Programming
+namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 给定两个字符串str1和str2, 返回两个字符串的最长公共子序列。

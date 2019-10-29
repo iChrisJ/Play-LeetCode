@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 请把一段纸条竖着放在桌子上，然后从纸条的下边向上方对折1次，压出折痕后展开。

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0078_Subsets
+namespace LeetCodeInCS._0078_Subsets
 {
 	public class Solution
 	{

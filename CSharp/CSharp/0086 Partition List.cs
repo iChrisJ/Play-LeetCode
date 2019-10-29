@@ -1,4 +1,4 @@
-﻿namespace CSharp._0086_Partition_List
+﻿namespace LeetCodeInCS._0086_Partition_List
 {
 	/**
 	 * Definition for singly-linked list.

@@ -1,4 +1,4 @@
-﻿namespace CSharp._0024_Swap_Nodes_in_Pairs
+﻿namespace LeetCodeInCS._0024_Swap_Nodes_in_Pairs
 {
 	public class ListNode
 	{

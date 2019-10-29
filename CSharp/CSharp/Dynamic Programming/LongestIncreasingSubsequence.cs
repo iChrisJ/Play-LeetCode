@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Dynamic_Programming
+namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 给定数组arr, 返回arr的最长递增子序列长度。

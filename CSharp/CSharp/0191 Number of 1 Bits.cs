@@ -1,4 +1,4 @@
-﻿namespace CSharp._0191_Number_of_1_Bits
+﻿namespace LeetCodeInCS._0191_Number_of_1_Bits
 {
 	public class Solution
 	{

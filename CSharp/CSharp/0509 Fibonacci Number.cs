@@ -1,4 +1,4 @@
-﻿namespace CSharp._0509_Fibonacci_Number
+﻿namespace LeetCodeInCS._0509_Fibonacci_Number
 {
 	public class Solution
 	{

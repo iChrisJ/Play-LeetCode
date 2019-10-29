@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0104_Maximum_Depth_of_Binary_Tree
+namespace LeetCodeInCS._0104_Maximum_Depth_of_Binary_Tree
 {
 	public class TreeNode
 	{

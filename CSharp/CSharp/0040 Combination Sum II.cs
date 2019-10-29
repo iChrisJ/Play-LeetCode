@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0040_Combination_Sum_II
+namespace LeetCodeInCS._0040_Combination_Sum_II
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0209_Minimum_Size_Subarray_Sum
+namespace LeetCodeInCS._0209_Minimum_Size_Subarray_Sum
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0238_Product_of_Array_Except_Self
+namespace LeetCodeInCS._0238_Product_of_Array_Except_Self
 {
 	public class Solution
 	{

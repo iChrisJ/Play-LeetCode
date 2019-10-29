@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0897_Increasing_Order_Search_Tree
+namespace LeetCodeInCS._0897_Increasing_Order_Search_Tree
 {
 	public class TreeNode
 	{

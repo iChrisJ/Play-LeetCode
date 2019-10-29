@@ -1,4 +1,4 @@
-﻿namespace CSharp.Linked_List
+﻿namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 给定一个链表中的节点node，但不给定整个链表的头节点。如何在链表中删除node? 要求时间复杂度为O(1)

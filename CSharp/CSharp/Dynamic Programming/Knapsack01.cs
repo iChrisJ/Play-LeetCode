@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Dynamic_Programming
+namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 一个背包有一定的承重C，有N件物品，每件都有自己的价值，记录在数组v中，

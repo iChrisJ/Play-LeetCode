@@ -1,4 +1,4 @@
-﻿namespace CSharp._0134_Gas_Station
+﻿namespace LeetCodeInCS._0134_Gas_Station
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0229_Majority_Element_II
+namespace LeetCodeInCS._0229_Majority_Element_II
 {
 	public class Solution
 	{

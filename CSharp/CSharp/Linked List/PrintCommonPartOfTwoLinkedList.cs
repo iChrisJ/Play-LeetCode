@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Linked_List
+namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 给定两个有序链表的头节点head1和head2, 打印两个有序链表的公共部分.

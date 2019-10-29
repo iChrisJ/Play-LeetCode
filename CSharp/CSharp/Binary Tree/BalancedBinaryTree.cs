@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 平衡二叉树(AVL树)

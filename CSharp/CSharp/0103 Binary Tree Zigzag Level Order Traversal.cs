@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0103_Binary_Tree_Zigzag_Level_Order_Traversal
+namespace LeetCodeInCS._0103_Binary_Tree_Zigzag_Level_Order_Traversal
 {
 	public class TreeNode
 	{

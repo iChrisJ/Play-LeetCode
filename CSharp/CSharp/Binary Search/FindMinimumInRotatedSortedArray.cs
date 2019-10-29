@@ -1,4 +1,4 @@
-﻿namespace CSharp.Binary_Search
+﻿namespace LeetCodeInCS.Binary_Search
 {
 	/// <summary>
 	/// 给定一个有序循环数组arr, 返回arr中的最小值. 

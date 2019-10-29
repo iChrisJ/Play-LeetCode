@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Linked_List
+namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 如何判断一个单链表是否有环? 有环的话返回进入环的第一个节点, 无环的话返回空. 

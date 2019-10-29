@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 给定一棵二叉树的头节点head，已知其中所有节点的值都不一样，找到含有节点最多的搜索二叉子树，并返回这棵子树的头节点。

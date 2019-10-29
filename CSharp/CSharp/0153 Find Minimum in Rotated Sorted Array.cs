@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0153_Find_Minimum_in_Rotated_Sorted_Array
+namespace LeetCodeInCS._0153_Find_Minimum_in_Rotated_Sorted_Array
 {
 	public class Solution
 	{

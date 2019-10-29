@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	class BinaryTreeInorder_Solution
 	{

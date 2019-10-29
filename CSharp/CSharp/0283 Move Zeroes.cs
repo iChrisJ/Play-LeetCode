@@ -1,4 +1,4 @@
-﻿namespace CSharp._0283_Move_Zeroes
+﻿namespace LeetCodeInCS._0283_Move_Zeroes
 {
 	public class Solution
 	{

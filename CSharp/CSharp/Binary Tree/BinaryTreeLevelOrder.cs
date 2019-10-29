@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 给定一棵二叉树的头节点root, 请按照图示格式打印

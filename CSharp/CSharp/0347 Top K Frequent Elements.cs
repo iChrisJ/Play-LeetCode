@@ -1,7 +1,7 @@
-﻿using CSharp.Utilities;
+﻿using LeetCodeInCS.Utilities;
 using System.Collections.Generic;
 
-namespace CSharp._0347_Top_K_Frequent_Elements
+namespace LeetCodeInCS._0347_Top_K_Frequent_Elements
 {
 	public class Solution
 	{

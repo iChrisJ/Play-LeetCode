@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0070_Climbing_Stairs
+namespace LeetCodeInCS._0070_Climbing_Stairs
 {
 	public class Solution
 	{

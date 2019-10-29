@@ -1,4 +1,4 @@
-﻿namespace CSharp._0019_Remove_Nth_Node_From_End_of_List
+﻿namespace LeetCodeInCS._0019_Remove_Nth_Node_From_End_of_List
 {
 	/**
 	 * Definition for singly-linked list. 

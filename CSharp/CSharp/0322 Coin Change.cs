@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0322_Coin_Change
+namespace LeetCodeInCS._0322_Coin_Change
 {
 	public class Solution
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0200_Number_of_Islands
+namespace LeetCodeInCS._0200_Number_of_Islands
 {
 	/// <summary>
 	/// DFS

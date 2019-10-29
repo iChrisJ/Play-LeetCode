@@ -1,4 +1,4 @@
-﻿namespace CSharp._0222_Count_Complete_Tree_Nodes
+﻿namespace LeetCodeInCS._0222_Count_Complete_Tree_Nodes
 {
 	public class TreeNode
 	{

@@ -1,4 +1,4 @@
-﻿namespace CSharp._0215_Kth_Largest_Element_in_an_Array
+﻿namespace LeetCodeInCS._0215_Kth_Largest_Element_in_an_Array
 {
 	public class Solution
 	{

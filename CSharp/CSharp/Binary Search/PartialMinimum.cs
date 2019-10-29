@@ -1,4 +1,4 @@
-﻿namespace CSharp.Binary_Search
+﻿namespace LeetCodeInCS.Binary_Search
 {
 	/// <summary>
 	/// 给定一个无序数组arr, 已知任意相邻的两个元素, 值都不重复. 请返回任意一个局部最小的位置. 

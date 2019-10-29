@@ -1,4 +1,4 @@
-﻿namespace CSharp.Linked_List
+﻿namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 如何判断两个无环单链表是否相交? 相交的话返回第一个相交的节点, 不想交的话返回. 

@@ -1,4 +1,4 @@
-﻿namespace CSharp.Bit_Manipulation
+﻿namespace LeetCodeInCS.Bit_Manipulation
 {
 	/// <summary>
 	/// 给定一个整型数组arr，其中只有一个数出现了奇数次，其他的数都出现了偶数次，请打印这个数。

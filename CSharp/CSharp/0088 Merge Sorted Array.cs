@@ -1,4 +1,4 @@
-﻿namespace CSharp._0088_Merge_Sorted_Array
+﻿namespace LeetCodeInCS._0088_Merge_Sorted_Array
 {
 	public class Solution
 	{

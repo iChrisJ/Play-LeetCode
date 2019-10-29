@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0072_Edit_Distance
+namespace LeetCodeInCS._0072_Edit_Distance
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0152_Maximum_Product_Subarray
+namespace LeetCodeInCS._0152_Maximum_Product_Subarray
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0130_Surrounded_Regions
+namespace LeetCodeInCS._0130_Surrounded_Regions
 {
 	public class Solution
 	{

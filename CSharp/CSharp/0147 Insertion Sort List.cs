@@ -1,4 +1,4 @@
-﻿namespace CSharp._0147_Insertion_Sort_List
+﻿namespace LeetCodeInCS._0147_Insertion_Sort_List
 {
 	public class ListNode
 	{

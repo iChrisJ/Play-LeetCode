@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp._0080_Remove_Duplicates_from_Sorted_Array_II
+namespace LeetCodeInCS._0080_Remove_Duplicates_from_Sorted_Array_II
 {
 	public class Solution
 	{

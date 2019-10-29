@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 1. 假设序列化结果为str, 初始时str为空字符串. 

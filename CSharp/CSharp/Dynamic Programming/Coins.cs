@@ -1,4 +1,4 @@
-﻿namespace CSharp.Dynamic_Programming
+﻿namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 给定数组arr, arr中所有的值都是正数且不重复。每个值代表一种面值的货币，

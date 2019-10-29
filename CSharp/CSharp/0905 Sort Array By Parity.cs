@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp._0905_Sort_Array_By_Parity
+namespace LeetCodeInCS._0905_Sort_Array_By_Parity
 {
 	public class Solution
 	{

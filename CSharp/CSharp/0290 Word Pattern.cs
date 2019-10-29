@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0290_Word_Pattern
+namespace LeetCodeInCS._0290_Word_Pattern
 {
 	public class Solution
 	{

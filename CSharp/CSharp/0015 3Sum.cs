@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0015_3Sum
+namespace LeetCodeInCS._0015_3Sum
 {
 	public class Solution
 	{

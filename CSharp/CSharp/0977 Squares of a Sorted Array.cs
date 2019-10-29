@@ -1,4 +1,4 @@
-﻿namespace CSharp._0977_Squares_of_a_Sorted_Array
+﻿namespace LeetCodeInCS._0977_Squares_of_a_Sorted_Array
 {
 	public class Solution
 	{

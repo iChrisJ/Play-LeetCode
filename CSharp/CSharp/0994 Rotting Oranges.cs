@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0994_Rotting_Oranges
+namespace LeetCodeInCS._0994_Rotting_Oranges
 {
 	public class Solution
 	{

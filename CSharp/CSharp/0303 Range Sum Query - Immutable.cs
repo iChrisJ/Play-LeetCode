@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0303_Range_Sum_Query___Immutable
+namespace LeetCodeInCS._0303_Range_Sum_Query___Immutable
 {
 	public class NumArray
 	{

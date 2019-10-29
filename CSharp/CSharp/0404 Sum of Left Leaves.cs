@@ -1,4 +1,4 @@
-﻿namespace CSharp._0404_Sum_of_Left_Leaves
+﻿namespace LeetCodeInCS._0404_Sum_of_Left_Leaves
 {
 	public class TreeNode
 	{

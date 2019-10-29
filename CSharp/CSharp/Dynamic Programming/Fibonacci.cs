@@ -1,4 +1,4 @@
-﻿namespace CSharp.Dynamic_Programming
+﻿namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 有n级台阶，一个人每次上一级或两级，问有多少种走完n级台阶的方法

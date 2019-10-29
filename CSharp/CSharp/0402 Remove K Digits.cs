@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp._0402_Remove_K_Digits
+namespace LeetCodeInCS._0402_Remove_K_Digits
 {
 	public class Solution
 	{

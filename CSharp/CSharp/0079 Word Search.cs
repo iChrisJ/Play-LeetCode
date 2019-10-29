@@ -1,4 +1,4 @@
-﻿namespace CSharp._0079_Word_Search
+﻿namespace LeetCodeInCS._0079_Word_Search
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0121_Best_Time_to_Buy_and_Sell_Stock
+namespace LeetCodeInCS._0121_Best_Time_to_Buy_and_Sell_Stock
 {
 	public class Solution
 	{

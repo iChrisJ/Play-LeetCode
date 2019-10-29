@@ -1,4 +1,4 @@
-﻿namespace CSharp._0206_Reverse_Linked_List
+﻿namespace LeetCodeInCS._0206_Reverse_Linked_List
 {
 	/**
 	* Definition for singly-linked list.

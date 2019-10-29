@@ -1,4 +1,4 @@
-﻿namespace CSharp._0167_Two_Sum_II___Input_array_is_sorted
+﻿namespace LeetCodeInCS._0167_Two_Sum_II___Input_array_is_sorted
 {
 	public class Solution
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0120_Triangle
+namespace LeetCodeInCS._0120_Triangle
 {
 	public class Solution
 	{

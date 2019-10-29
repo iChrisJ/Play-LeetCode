@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.KMP_Algorithm
+namespace LeetCodeInCS.KMP_Algorithm
 {
 	class KMPAlgo
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace CSharp._0014_Longest_Common_Prefix
+namespace LeetCodeInCS._0014_Longest_Common_Prefix
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0401_Binary_Watch
+namespace LeetCodeInCS._0401_Binary_Watch
 {
 	public class Solution
 	{

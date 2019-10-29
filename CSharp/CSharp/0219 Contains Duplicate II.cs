@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0219_Contains_Duplicate_II
+namespace LeetCodeInCS._0219_Contains_Duplicate_II
 {
 	public class Solution
 	{

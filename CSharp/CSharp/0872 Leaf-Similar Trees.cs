@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0872_Leaf_Similar_Trees
+namespace LeetCodeInCS._0872_Leaf_Similar_Trees
 {
 	public class TreeNode
 	{

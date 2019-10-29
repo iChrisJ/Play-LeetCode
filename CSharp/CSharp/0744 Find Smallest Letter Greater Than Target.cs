@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0744_Find_Smallest_Letter_Greater_Than_Target
+namespace LeetCodeInCS._0744_Find_Smallest_Letter_Greater_Than_Target
 {
 	public class Solution
 	{

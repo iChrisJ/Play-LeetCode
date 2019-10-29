@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0102_Binary_Tree_Level_Order_Traversal
+namespace LeetCodeInCS._0102_Binary_Tree_Level_Order_Traversal
 {
 	public class TreeNode
 	{

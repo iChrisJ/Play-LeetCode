@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0199_Binary_Tree_Right_Side_View
+namespace LeetCodeInCS._0199_Binary_Tree_Right_Side_View
 {
 	public class TreeNode
 	{

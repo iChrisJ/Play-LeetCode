@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0198_House_Robber
+namespace LeetCodeInCS._0198_House_Robber
 {
 	/// <summary>
 	/// Memory Search

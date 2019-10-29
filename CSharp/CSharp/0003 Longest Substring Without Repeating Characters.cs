@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace CSharp._0003_Longest_Substring_Without_Repeating_Characters
+namespace LeetCodeInCS._0003_Longest_Substring_Without_Repeating_Characters
 {
 	public class Solution
 	{

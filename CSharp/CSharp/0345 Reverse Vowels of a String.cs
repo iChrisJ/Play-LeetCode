@@ -1,4 +1,4 @@
-﻿namespace CSharp._0345_Reverse_Vowels_of_a_String
+﻿namespace LeetCodeInCS._0345_Reverse_Vowels_of_a_String
 {
 	public class Solution
 	{

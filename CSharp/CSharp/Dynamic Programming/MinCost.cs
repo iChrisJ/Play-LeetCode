@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Dynamic_Programming
+namespace LeetCodeInCS.Dynamic_Programming
 {
 	/// <summary>
 	/// 给定两个字符串str1和str2, 再给定三个整数ic, dc和rc, 分别代表插入,删除和替换一个字符的代价.

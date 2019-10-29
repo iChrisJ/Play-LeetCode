@@ -1,4 +1,4 @@
-﻿namespace CSharp._0392_Is_Subsequence
+﻿namespace LeetCodeInCS._0392_Is_Subsequence
 {
 	public class Solution
 	{

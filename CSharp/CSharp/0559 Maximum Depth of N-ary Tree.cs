@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0559_Maximum_Depth_of_N_ary_Tree
+namespace LeetCodeInCS._0559_Maximum_Depth_of_N_ary_Tree
 {
 	// Definition for a Node.
 	public class Node

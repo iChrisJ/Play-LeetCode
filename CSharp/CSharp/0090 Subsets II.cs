@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0090_Subsets_II
+namespace LeetCodeInCS._0090_Subsets_II
 {
 	public class Solution
 	{

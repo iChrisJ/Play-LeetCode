@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0150_Evaluate_Reverse_Polish_Notation
+namespace LeetCodeInCS._0150_Evaluate_Reverse_Polish_Notation
 {
 	public class Solution
 	{

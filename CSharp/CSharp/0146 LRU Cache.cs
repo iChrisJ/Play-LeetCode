@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0146_LRU_Cache
+namespace LeetCodeInCS._0146_LRU_Cache
 {
 	public class LRUCache
 	{

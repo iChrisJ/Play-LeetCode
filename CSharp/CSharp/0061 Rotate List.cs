@@ -1,4 +1,4 @@
-﻿namespace CSharp._0061_Rotate_List
+﻿namespace LeetCodeInCS._0061_Rotate_List
 {
 	public class ListNode
 	{

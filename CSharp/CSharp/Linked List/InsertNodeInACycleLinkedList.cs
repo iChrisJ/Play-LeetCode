@@ -1,4 +1,4 @@
-﻿namespace CSharp.Linked_List
+﻿namespace LeetCodeInCS.Linked_List
 {
 	public class ListNode
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp.Utilities
+namespace LeetCodeInCS.Utilities
 {
 	public class MinHeap<T>
 	{

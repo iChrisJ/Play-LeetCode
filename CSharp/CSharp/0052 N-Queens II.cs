@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0052_N_Queens_II
+namespace LeetCodeInCS._0052_N_Queens_II
 {
 	// Almost same as the leetcode 51 and easier than it.
 	public class Solution

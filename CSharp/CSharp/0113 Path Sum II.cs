@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0113_Path_Sum_II
+namespace LeetCodeInCS._0113_Path_Sum_II
 {
 	public class TreeNode
 	{

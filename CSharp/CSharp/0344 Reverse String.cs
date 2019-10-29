@@ -1,4 +1,4 @@
-﻿namespace CSharp._0344_Reverse_String
+﻿namespace LeetCodeInCS._0344_Reverse_String
 {
 	public class Solution
 	{

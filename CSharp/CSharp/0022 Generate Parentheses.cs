@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0022_Generate_Parentheses
+namespace LeetCodeInCS._0022_Generate_Parentheses
 {
 	public class Solution
 	{

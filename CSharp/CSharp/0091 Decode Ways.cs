@@ -1,4 +1,4 @@
-﻿namespace CSharp._0091_Decode_Ways
+﻿namespace LeetCodeInCS._0091_Decode_Ways
 {
 
 	/// Dynamic Programming

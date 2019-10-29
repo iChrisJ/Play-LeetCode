@@ -1,4 +1,4 @@
-﻿namespace CSharp._0328_Odd_Even_Linked_List
+﻿namespace LeetCodeInCS._0328_Odd_Even_Linked_List
 {
 	public class ListNode
 	{

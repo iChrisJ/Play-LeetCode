@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0257_Binary_Tree_Paths
+namespace LeetCodeInCS._0257_Binary_Tree_Paths
 {
 	public class TreeNode
 	{

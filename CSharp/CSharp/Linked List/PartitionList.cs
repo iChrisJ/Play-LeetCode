@@ -1,4 +1,4 @@
-﻿namespace CSharp.Linked_List
+﻿namespace LeetCodeInCS.Linked_List
 {
 	/// <summary>
 	/// 给定一个链表的头节点head，再给定一个数num，请把链表调整成节点值小于num的节点都放在链表的左边，

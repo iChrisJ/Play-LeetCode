@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0542_01_Matrix
+namespace LeetCodeInCS._0542_01_Matrix
 {
 	public class Solution
 	{

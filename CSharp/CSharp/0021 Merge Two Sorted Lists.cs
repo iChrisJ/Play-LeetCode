@@ -1,4 +1,4 @@
-﻿namespace CSharp._0021_Merge_Two_Sorted_Lists
+﻿namespace LeetCodeInCS._0021_Merge_Two_Sorted_Lists
 {
 	public class ListNode
 	{

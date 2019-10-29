@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0993_Cousins_in_Binary_Tree
+namespace LeetCodeInCS._0993_Cousins_in_Binary_Tree
 {
 	public class TreeNode
 	{

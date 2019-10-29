@@ -1,4 +1,4 @@
-﻿namespace CSharp._0075_Sort_Colors
+﻿namespace LeetCodeInCS._0075_Sort_Colors
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0011_Container_With_Most_Water
+namespace LeetCodeInCS._0011_Container_With_Most_Water
 {
 	public class Solution
 	{

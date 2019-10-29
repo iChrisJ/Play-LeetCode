@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0242_Valid_Anagram
+namespace LeetCodeInCS._0242_Valid_Anagram
 {
 	public class Solution
 	{

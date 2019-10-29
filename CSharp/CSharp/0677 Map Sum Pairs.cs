@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0677_Map_Sum_Pairs
+namespace LeetCodeInCS._0677_Map_Sum_Pairs
 {
 	public class MapSum
 	{

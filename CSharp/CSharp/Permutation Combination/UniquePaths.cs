@@ -1,4 +1,4 @@
-﻿namespace CSharp.Permutation_Combination
+﻿namespace LeetCodeInCS.Permutation_Combination
 {
 	/// <summary>
 	/// 在6×9的方格中，以左上角为起点，右下角为终点，每次只能向下走或者向右走，请问一共有多少种不同的走法。

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0205_Isomorphic_Strings
+namespace LeetCodeInCS._0205_Isomorphic_Strings
 {
 	public class Solution
 	{

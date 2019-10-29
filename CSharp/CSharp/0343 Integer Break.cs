@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0343_Integer_Break
+namespace LeetCodeInCS._0343_Integer_Break
 {
 	public class Solution
 	{

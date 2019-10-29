@@ -1,4 +1,4 @@
-﻿namespace CSharp._0074_Search_a_2D_Matrix
+﻿namespace LeetCodeInCS._0074_Search_a_2D_Matrix
 {
 	public class Solution
 	{

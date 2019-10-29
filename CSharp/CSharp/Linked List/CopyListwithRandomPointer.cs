@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Linked_List
+namespace LeetCodeInCS.Linked_List
 {
 	public class Node
 	{

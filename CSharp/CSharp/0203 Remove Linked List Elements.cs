@@ -1,4 +1,4 @@
-﻿namespace CSharp._0203_Remove_Linked_List_Elements
+﻿namespace LeetCodeInCS._0203_Remove_Linked_List_Elements
 {
 	public class Solution
 	{

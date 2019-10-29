@@ -1,4 +1,4 @@
-﻿namespace CSharp._0002_Add_Two_Numbers
+﻿namespace LeetCodeInCS._0002_Add_Two_Numbers
 {
 	/**
     * Definition for singly-linked list.

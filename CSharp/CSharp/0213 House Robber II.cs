@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0213_House_Robber_II
+namespace LeetCodeInCS._0213_House_Robber_II
 {
 	public class Solution
 	{

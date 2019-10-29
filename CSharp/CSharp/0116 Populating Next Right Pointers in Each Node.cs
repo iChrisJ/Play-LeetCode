@@ -1,4 +1,4 @@
-﻿namespace CSharp._0116_Populating_Next_Right_Pointers_in_Each_Node
+﻿namespace LeetCodeInCS._0116_Populating_Next_Right_Pointers_in_Each_Node
 {
 	// Definition for a Node.
 	public class Node

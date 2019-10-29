@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0239_Sliding_Window_Maximum
+namespace LeetCodeInCS._0239_Sliding_Window_Maximum
 {
 
 	public class Solution

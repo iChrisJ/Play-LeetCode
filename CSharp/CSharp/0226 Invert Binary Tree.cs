@@ -1,4 +1,4 @@
-﻿namespace CSharp._0226_Invert_Binary_Tree
+﻿namespace LeetCodeInCS._0226_Invert_Binary_Tree
 {
 	public class TreeNode
 	{

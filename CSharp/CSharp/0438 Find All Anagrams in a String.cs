@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0438_Find_All_Anagrams_in_a_String
+namespace LeetCodeInCS._0438_Find_All_Anagrams_in_a_String
 {
 	public class Solution
 	{

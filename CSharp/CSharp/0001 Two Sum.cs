@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0001_Two_Sum
+namespace LeetCodeInCS._0001_Two_Sum
 {
 	public class Solution
 	{

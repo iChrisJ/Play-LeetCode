@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0211_Add_and_Search_Word___Data_structure_design
+namespace LeetCodeInCS._0211_Add_and_Search_Word___Data_structure_design
 {
 	public class WordDictionary
 	{

@@ -1,4 +1,4 @@
-﻿namespace CSharp._0026_Remove_Duplicates_from_Sorted_Array
+﻿namespace LeetCodeInCS._0026_Remove_Duplicates_from_Sorted_Array
 {
 	public class Solution
 	{

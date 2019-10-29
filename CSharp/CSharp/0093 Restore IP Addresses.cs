@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0093_Restore_IP_Addresses
+namespace LeetCodeInCS._0093_Restore_IP_Addresses
 {
 	public class Solution
 	{

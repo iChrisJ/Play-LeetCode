@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0300_Longest_Increasing_Subsequence
+namespace LeetCodeInCS._0300_Longest_Increasing_Subsequence
 {
 	public class Solution
 	{

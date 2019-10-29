@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0110_Balanced_Binary_Tree
+namespace LeetCodeInCS._0110_Balanced_Binary_Tree
 {
 	public class TreeNode
 	{

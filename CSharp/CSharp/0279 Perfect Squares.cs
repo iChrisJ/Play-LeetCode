@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0279_Perfect_Squares
+namespace LeetCodeInCS._0279_Perfect_Squares
 {
 	public class Solution
 	{

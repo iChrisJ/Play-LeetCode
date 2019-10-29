@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0139_Word_Break
+namespace LeetCodeInCS._0139_Word_Break
 {
 	public class Solution
 	{

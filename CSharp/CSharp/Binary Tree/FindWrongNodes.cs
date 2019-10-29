@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 题: 一棵二叉树原本是搜索二叉树，但是其中有两个节点调换了位，使得这二叉树不再是搜索二叉树，请找到这两个错误节点。

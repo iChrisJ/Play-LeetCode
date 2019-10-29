@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0111_Minimum_Depth_of_Binary_Tree
+namespace LeetCodeInCS._0111_Minimum_Depth_of_Binary_Tree
 {
 	public class TreeNode
 	{

@@ -1,4 +1,4 @@
-﻿namespace CSharp._0050_Pow_x__n_
+﻿namespace LeetCodeInCS._0050_Pow_x__n_
 {
 	public class Solution
 	{

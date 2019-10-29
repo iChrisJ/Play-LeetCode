@@ -1,4 +1,4 @@
-﻿namespace CSharp._0005_Longest_Palindromic_Substring
+﻿namespace LeetCodeInCS._0005_Longest_Palindromic_Substring
 {
 	public class Solution
 	{

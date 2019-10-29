@@ -1,4 +1,4 @@
-﻿namespace CSharp._0112_Path_Sum
+﻿namespace LeetCodeInCS._0112_Path_Sum
 {
 	public class TreeNode
 	{

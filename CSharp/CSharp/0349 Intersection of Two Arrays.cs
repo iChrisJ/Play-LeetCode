@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0349_Intersection_of_Two_Arrays
+namespace LeetCodeInCS._0349_Intersection_of_Two_Arrays
 {
 	public class Solution
 	{

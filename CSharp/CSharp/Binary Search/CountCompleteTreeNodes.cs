@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharp.Binary_Search
+namespace LeetCodeInCS.Binary_Search
 {
 	public class TreeNode
 	{

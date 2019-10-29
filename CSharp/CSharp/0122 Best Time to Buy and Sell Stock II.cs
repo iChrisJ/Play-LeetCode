@@ -1,4 +1,4 @@
-﻿namespace CSharp._0122_Best_Time_to_Buy_and_Sell_Stock_II
+﻿namespace LeetCodeInCS._0122_Best_Time_to_Buy_and_Sell_Stock_II
 {
 	public class Solution
 	{

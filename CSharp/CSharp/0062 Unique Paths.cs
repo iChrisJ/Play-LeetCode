@@ -1,4 +1,4 @@
-﻿namespace CSharp._0062_Unique_Paths
+﻿namespace LeetCodeInCS._0062_Unique_Paths
 {
 	public class Solution
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0547_Friend_Circles
+namespace LeetCodeInCS._0547_Friend_Circles
 {
 	public class Solution
 	{

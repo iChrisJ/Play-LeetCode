@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Knapsack01
+namespace LeetCodeInCS.Knapsack01
 {
 	class Solution
 	{

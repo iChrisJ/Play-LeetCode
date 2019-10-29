@@ -1,4 +1,4 @@
-﻿namespace CSharp._0027_Remove_Element
+﻿namespace LeetCodeInCS._0027_Remove_Element
 {
 	public class Solution
 	{

@@ -1,4 +1,4 @@
-﻿namespace CSharp._0231_Power_of_Two
+﻿namespace LeetCodeInCS._0231_Power_of_Two
 {
 	public class Solution
 	{

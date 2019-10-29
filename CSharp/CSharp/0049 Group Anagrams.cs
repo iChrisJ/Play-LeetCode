@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0049_Group_Anagrams
+namespace LeetCodeInCS._0049_Group_Anagrams
 {
 	public class Solution
 	{

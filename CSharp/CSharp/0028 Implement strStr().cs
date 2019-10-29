@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp._0028_Implement_strStr__
+namespace LeetCodeInCS._0028_Implement_strStr__
 {
 	public class Solution
 	{

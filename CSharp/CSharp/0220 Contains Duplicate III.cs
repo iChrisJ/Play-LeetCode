@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharp._0220_Contains_Duplicate_III
+namespace LeetCodeInCS._0220_Contains_Duplicate_III
 {
 	public class Solution
 	{

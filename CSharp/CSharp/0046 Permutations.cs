@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0046_Permutations
+namespace LeetCodeInCS._0046_Permutations
 {
 	public class Solution
 	{

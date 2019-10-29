@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharp.Binary_Tree
+namespace LeetCodeInCS.Binary_Tree
 {
 	/// <summary>
 	/// 后继节点:

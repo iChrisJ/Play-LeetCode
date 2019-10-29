@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CSharp._0202_Happy_Number
+namespace LeetCodeInCS._0202_Happy_Number
 {
 	public class Solution
 	{
