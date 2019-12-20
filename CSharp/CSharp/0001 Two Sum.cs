@@ -12,13 +12,8 @@ namespace LeetCodeInCS._0001_Two_Sum
 			{
 				if (dict.ContainsKey(target - nums[i]))
 					return new int[] { (int)dict[target - nums[i]], i };
-				else
-				{
-					if (dict.ContainsKey(nums[i]))
-						dict[nums[i]] = i;
-					else
-						dict.Add(nums[i], i);
-				}
+				else if (!dict.ContainsKey(nums[i]))
+					dict.Add(nums[i], i);
 			}
 
 			return null;

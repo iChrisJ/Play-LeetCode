@@ -37,4 +37,47 @@ namespace LeetCodeInCS._0015_3Sum
 			return res;
 		}
 	}
+
+	public class Solution2
+	{
+		public IList<IList<int>> ThreeSum(int[] nums)
+		{
+			IList<IList<int>> res = new List<IList<int>>();
+			if (nums == null || nums.Length <= 2)
+				return res;
+
+			Array.Sort<int>(nums);
+
+			for (int i = 0; i < nums.Length - 2; i++)
+			{
+				int l = i + 1, r = nums.Length - 1;
+
+				while (l < r)
+				{
+					int total = nums[i] + nums[l] + nums[r];
+					if (total == 0)
+					{
+						res.Add(new List<int> { nums[i], nums[l], nums[r] });
+
+						while (l < r && nums[l] == nums[l + 1])
+							l++;
+						while (l < r && nums[r] == nums[r - 1])
+							r--;
+
+						l++;
+						r--;
+					}
+					else if (total < 0)
+						l++;
+					else
+						r--;
+				}
+
+				while (i < nums.Length - 2 && nums[i] == nums[i + 1])
+					i++;
+			}
+
+			return res;
+		}
+	}
 }
