@@ -12,15 +12,9 @@ namespace LeetCodeInCS._0209_Minimum_Size_Subarray_Sum
 			while (i < nums.Length)
 			{
 				if (j + 1 < nums.Length && sum < s)
-				{
-					j++;
-					sum += nums[j];
-				}
+					sum += nums[++j];
 				else
-				{
-					sum -= nums[j];
-					i++;
-				}
+					sum -= nums[i++];
 
 				if (sum >= s)
 					res = Math.Min(res, j - i + 1);
