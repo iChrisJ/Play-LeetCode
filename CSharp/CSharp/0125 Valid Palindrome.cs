@@ -1,26 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LeetCodeInCS._0125_Valid_Palindrome
+﻿namespace LeetCodeInCS._0125_Valid_Palindrome
 {
+	/// <summary>
+	/// Two points.
+	/// </summary>
 	public class Solution
 	{
 		public bool IsPalindrome(string s)
 		{
-			int i = 0, j = s.Length - 1;
-			while (i <= j)
+			if (s == null)
+				return false;
+			if (s.Length <= 1)
+				return true;
+
+			int l = 0, r = s.Length - 1;
+			while (l <= r)
 			{
-				if (char.IsLetterOrDigit(s[i]) && char.IsLetterOrDigit(s[j]) && char.ToLower(s[i]) != char.ToLower(s[j]))
+				if (!char.IsLetterOrDigit(s[l]))
+					l++;
+				else if (!char.IsLetterOrDigit(s[r]))
+					r--;
+				else if (char.ToLower(s[l]) != char.ToLower(s[r]))
 					return false;
-				else if (!char.IsLetterOrDigit(s[i]))
-					i++;
-				else if (!char.IsLetterOrDigit(s[j]))
-					j--;
-				else // char.IsLetterOrDigit(s[i]) && char.IsLetterOrDigit(s[j]) && char.ToLower(s[i]) == char.ToLower(s[j])
+				else
 				{
-					i++;
-					j--;
+					l++;
+					r--;
 				}
 			}
 			return true;

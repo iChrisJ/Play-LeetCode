@@ -1,5 +1,10 @@
-﻿namespace LeetCodeInCS._0167_Two_Sum_II___Input_array_is_sorted
+﻿using System;
+
+namespace LeetCodeInCS._0167_Two_Sum_II___Input_array_is_sorted
 {
+	/// <summary>
+	/// Binary Search
+	/// </summary>
 	public class Solution
 	{
 		public int[] TwoSum(int[] numbers, int target)
@@ -10,7 +15,7 @@
 				if (other != -1)
 					return new int[2] { i + 1, other + 1 };
 			}
-			return null;
+			throw new ArgumentException("Invalid arguments.");
 		}
 
 		private int FindNum(int[] nums, int l, int r, int v)
@@ -27,8 +32,14 @@
 			else
 				return FindNum(nums, mid + 1, r, v);
 		}
+	}
 
-		public int[] TwoSum2(int[] numbers, int target)
+	/// <summary>
+	/// Two points
+	/// </summary>
+	public class Solution2
+	{
+		public int[] TwoSum(int[] numbers, int target)
 		{
 			int i = 0, j = numbers.Length - 1;
 
@@ -42,7 +53,7 @@
 				else
 					i++;
 			}
-			return null;
+			throw new ArgumentException("Invalid arguments.");
 		}
 	}
 }

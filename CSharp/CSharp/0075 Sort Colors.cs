@@ -1,6 +1,32 @@
 ﻿namespace LeetCodeInCS._0075_Sort_Colors
 {
+	/// <summary>
+	/// Counting sort.
+	/// </summary>
 	public class Solution
+	{
+		public void SortColors(int[] nums)
+		{
+			if (nums == null || nums.Length == 0)
+				return;
+
+			int[] count = new int[3];
+			for (int i = 0; i < nums.Length; i++)
+				count[nums[i]]++;
+
+			int k = 0;
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < count[i]; j++)
+					nums[k++] = i;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Quick Sort in 3 ways.
+	/// </summary>
+	public class Solution2
 	{
 		public void SortColors(int[] nums)
 		{
@@ -28,22 +54,6 @@
 						break;
 				}
 			}
-		}
-
-		public void SortColors2(int[] nums)
-		{
-			int[] count = new int[3] { 0, 0, 0 };
-
-			for (int i = 0; i < nums.Length; i++)
-				count[nums[i]]++;
-
-			int index = 0;
-			for (int i = 0; i < count[0]; i++)
-				nums[index++] = 0;
-			for (int i = 0; i < count[1]; i++)
-				nums[index++] = 1;
-			for (int i = 0; i < count[2]; i++)
-				nums[index++] = 2;
 		}
 	}
 }

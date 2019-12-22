@@ -1,39 +1,33 @@
-﻿namespace LeetCodeInCS._0345_Reverse_Vowels_of_a_String
+﻿using System.Collections.Generic;
+
+namespace LeetCodeInCS._0345_Reverse_Vowels_of_a_String
 {
 	public class Solution
 	{
 		public string ReverseVowels(string s)
 		{
-			char[] charArr = s.ToCharArray();
-			int i = 0, j = charArr.Length - 1;
+			if (s == null || s.Length <= 1)
+				return s;
 
-			while (i <= j)
+			HashSet<char> set = new HashSet<char> { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+			char[] chars = s.ToCharArray();
+			for (int l = 0, r = chars.Length - 1; l < r;)
 			{
-				while (i < charArr.Length && !IsVowel(charArr[i]))
-					i++;
-				while (j > 0 && !IsVowel(charArr[j]))
-					j--;
-				if (i <= j)
-				{
-					char temp = charArr[i];
-					charArr[i] = charArr[j];
-					charArr[j] = temp;
-					i++;
-					j--;
-				}
+				if (!set.Contains(chars[l]))
+					l++;
+				else if (!set.Contains(chars[r]))
+					r--;
 				else
-					return new string(charArr);
+				{
+					char temp = chars[l];
+					chars[l] = chars[r];
+					chars[r] = temp;
+					l++;
+					r--;
+				}
 			}
-			return new string(charArr);
 
-		}
-
-		public bool IsVowel(char c)
-		{
-			char ch = char.ToLower(c);
-			if (ch == 'a' || ch == 'e' || ch == 'o' || ch == 'i' || ch == 'u')
-				return true;
-			return false;
+			return new string(chars);
 		}
 	}
 }

@@ -4,20 +4,21 @@
 	{
 		public int RemoveDuplicates(int[] nums)
 		{
-			if (nums.Length == 0)
-				return 0;
+			if (nums == null || nums.Length < 2)
+				return nums.Length;
 
-			int j = 0, i = 1;
-			while (i < nums.Length)
+			int len = 0; // [0..len] no dup elements.
+			for (int i = 1; i < nums.Length; i++)
 			{
-				if (nums[i] > nums[j])
-				{
-					j++;
-					nums[j] = nums[i];
-				}
-				i++;
+				if (nums[i] != nums[len])
+					if (i == len + 1)
+						len++;
+					else
+						nums[++len] = nums[i];
+				//if (nums[i] != nums[len] && i > ++len)
+				//	nums[len] = nums[i];
 			}
-			return j + 1;
+			return len + 1;
 		}
 	}
 }
