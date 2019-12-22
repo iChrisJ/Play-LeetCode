@@ -26,7 +26,7 @@ namespace LeetCodeInCS._0283_Move_Zeroes
 	}
 
 	/// <summary>
-	/// Two Points. 
+	/// Two Pointer
 	/// </summary>
 	public class Solution2
 	{
@@ -43,7 +43,7 @@ namespace LeetCodeInCS._0283_Move_Zeroes
 	}
 
 	/// <summary>
-	/// Two points, swap elements.
+	/// Two Pointer, swap elements.
 	/// </summary>
 	public class Solution3
 	{

@@ -1,7 +1,7 @@
 ﻿namespace LeetCodeInCS._0125_Valid_Palindrome
 {
 	/// <summary>
-	/// Two points.
+	/// Two Pointer.
 	/// </summary>
 	public class Solution
 	{

@@ -35,7 +35,7 @@ namespace LeetCodeInCS._0167_Two_Sum_II___Input_array_is_sorted
 	}
 
 	/// <summary>
-	/// Two points
+	/// Two Pointer.
 	/// </summary>
 	public class Solution2
 	{

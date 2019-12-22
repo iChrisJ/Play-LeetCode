@@ -13,7 +13,7 @@ namespace LeetCodeInCS._0653_Two_Sum_IV___Input_is_a_BST
 	}
 
 	/// <summary>
-	/// InOrder to convert the tree to a sorted array, then traverse the array with two points
+	/// InOrder to convert the tree to a sorted array, then traverse the array with two pointers.
 	/// </summary>
 	public class Solution
 	{

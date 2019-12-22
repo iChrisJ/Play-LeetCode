@@ -54,7 +54,7 @@ namespace LeetCodeInCS._0042_Trapping_Rain_Water
 
 
 	/// <summary>
-	/// Two Points
+	/// Two Pointer
 	/// </summary>
 	public class Solution3
 	{
