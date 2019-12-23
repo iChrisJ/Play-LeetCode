@@ -31,4 +31,50 @@ namespace LeetCodeInCS._0438_Find_All_Anagrams_in_a_String
 			return true;
 		}
 	}
+
+	public class Solution2
+	{
+		public IList<int> FindAnagrams(string s, string p)
+		{
+			int l = 0, r = 0;
+			Dictionary<char, int> need = new Dictionary<char, int>();
+			Dictionary<char, int> window = new Dictionary<char, int>();
+			int match = 0;
+			IList<int> res = new List<int>();
+
+			foreach (char c in p)
+			{
+				if (need.ContainsKey(c))
+					need[c]++;
+				else
+					need.Add(c, 1);
+			}
+
+			while (r < s.Length)
+			{
+				if (window.ContainsKey(s[r]))
+					window[s[r]]++;
+				else
+					window.Add(s[r], 1);
+
+				if (need.ContainsKey(s[r]) && window[s[r]] == need[s[r]])
+					match++;
+				r++;
+
+				if (r - l == p.Length)
+				{
+					if (match == need.Count)
+						res.Add(l);
+
+					// because window[s[l]] will minus one soon, so if window[s[l]] == need[s[l]], then match will be reduced after window[s[l]]--
+					if (need.ContainsKey(s[l]) && window[s[l]] == need[s[l]])
+						match--;
+					window[s[l]]--;
+
+					l++;
+				}
+			}
+			return res;
+		}
+	}
 }
