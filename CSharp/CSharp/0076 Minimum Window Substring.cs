@@ -49,4 +49,43 @@ namespace LeetCodeInCS._0076_Minimum_Window_Substring
 			return res == s.Length + 1 ? "" : s.Substring(start, res);
 		}
 	}
+
+	public class Solution2
+	{
+		public int[] MaxSlidingWindow(int[] nums, int k)
+		{
+			if (nums == null || nums.Length * k == 0)
+				return new int[0];
+
+			int[] res = new int[nums.Length - k + 1];
+			LinkedList<int> deque = new LinkedList<int>();
+
+			for (int i = 0; i < k; i++)
+			{
+				CleanUp_Deque(nums, deque, i, k);
+				deque.AddLast(i);
+			}
+
+			res[0] = deque.First.Value;
+
+			for (int i = k; i < nums.Length; i++)
+			{
+				CleanUp_Deque(nums, deque, i, k);
+				deque.AddLast(i);
+				res[i - k + 1] = deque.First.Value;
+			}
+			return res;
+		}
+
+		private void CleanUp_Deque(int[] nums, LinkedList<int> deque, int i, int k)
+		{
+			if (deque.Count > 0 && deque.First.Value == i - k)
+				deque.RemoveFirst();
+
+			while (deque.Count > 0 && nums[i] >= nums[deque.Last.Value])
+				deque.RemoveLast();
+		}
+	}
+
+
 }
