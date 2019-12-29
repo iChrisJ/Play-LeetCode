@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCodeInCS._0202_Happy_Number
 {
@@ -6,30 +7,29 @@ namespace LeetCodeInCS._0202_Happy_Number
 	{
 		public bool IsHappy(int n)
 		{
-			Dictionary<int, int> dic = new Dictionary<int, int>();
-			while (n != 1)
-			{
-				n = Sum(n);
-				if (n == 1)
-					return true;
+			if (n <= 0)
+				throw new ArgumentException("Invalid Parameter.");
 
-				if (dic.ContainsKey(n))
-					return false;
-				else
-					dic.Add(n, 1);
-			}
-			return true;
-		}
-
-		private int Sum(int n)
-		{
-			int sum = 0;
+			HashSet<int> set = new HashSet<int>();
 			while (n > 0)
 			{
-				sum = sum + (n % 10) * (n % 10);
-				n = n / 10;
+				int sum = 0;
+				while (n > 0)
+				{
+					sum += (n % 10) * (n % 10);
+					n = n / 10;
+				}
+
+				if (sum == 1)
+					return true;
+
+				if (set.Contains(sum))
+					return false;
+
+				set.Add(sum);
+				n = sum;
 			}
-			return sum;
+			return false;
 		}
 	}
 }

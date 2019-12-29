@@ -6,33 +6,28 @@ namespace LeetCodeInCS._0242_Valid_Anagram
 	{
 		public bool IsAnagram(string s, string t)
 		{
-			Dictionary<char, int> dic = new Dictionary<char, int>();
+			if (s == null || t == null || s.Length != t.Length)
+				return false;
+
+			Dictionary<int, int> dict = new Dictionary<int, int>();
 			for (int i = 0; i < s.Length; i++)
 			{
-				if (dic.ContainsKey(s[i]))
-				{
-					dic[s[i]]++;
-				}
+				if (dict.ContainsKey(s[i]))
+					dict[s[i]]++;
 				else
-				{
-					dic.Add(s[i], 1);
-				}
+					dict.Add(s[i], 1);
 			}
 
 			for (int i = 0; i < t.Length; i++)
 			{
-				if (dic.ContainsKey(t[i]))
-				{
-					if (dic[t[i]] > 1) dic[t[i]]--;
-					else dic.Remove(t[i]);
-				}
-				else
-				{
+				if (!dict.ContainsKey(t[i]))
 					return false;
-				}
-			}
 
-			return dic.Count == 0;
+				dict[t[i]]--;
+				if (dict[t[i]] == 0)
+					dict.Remove(t[i]);
+			}
+			return dict.Count == 0;
 		}
 	}
 
@@ -40,19 +35,23 @@ namespace LeetCodeInCS._0242_Valid_Anagram
 	{
 		public bool IsAnagram(string s, string t)
 		{
-			int[] dic = new int[26];
+			if (s == null || t == null || s.Length != t.Length)
+				return false;
 
+			int[] dict = new int[26];
 			for (int i = 0; i < s.Length; i++)
-				dic[s[i] - 'a'] += 1;
+				dict[s[i] - 'a']++;
 
 			for (int i = 0; i < t.Length; i++)
-				dic[t[i] - 'a'] -= 1;
-
-			for (int i = 0; i < dic.Length; i++)
 			{
-				if (dic[i] != 0)
+				if (dict[t[i] - 'a'] == 0)
 					return false;
+				dict[t[i] - 'a']--;
 			}
+
+			for (int i = 0; i < dict.Length; i++)
+				if (dict[i] != 0)
+					return false;
 			return true;
 		}
 	}

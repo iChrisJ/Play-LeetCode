@@ -4,28 +4,24 @@ namespace LeetCodeInCS._0290_Word_Pattern
 {
 	public class Solution
 	{
-		public bool WordPattern(string pattern, string str)
+		public bool IsIsomorphic(string s, string t)
 		{
-			Dictionary<char, string> map = new Dictionary<char, string>();
-			Dictionary<string, char> rmap = new Dictionary<string, char>();
-
-			string[] strArr = str.Split(" ");
-
-			if (pattern.Length != strArr.Length)
+			if (s.Length != t.Length)
 				return false;
 
-			for (int i = 0; i < strArr.Length; i++)
+			Dictionary<char, char> dict1 = new Dictionary<char, char>();
+			Dictionary<char, char> dict2 = new Dictionary<char, char>();
+			for (int i = 0; i < s.Length; i++)
 			{
-				if (!map.ContainsKey(pattern[i]) && !rmap.ContainsKey(strArr[i]))
+				if (dict1.ContainsKey(s[i]) != dict2.ContainsKey(t[i]))
+					return false;
+
+				if (!dict1.ContainsKey(s[i]) && !dict2.ContainsKey(t[i]))
 				{
-					map.Add(pattern[i], strArr[i]);
-					rmap.Add(strArr[i], pattern[i]);
+					dict1.Add(s[i], t[i]);
+					dict2.Add(t[i], s[i]);
 				}
-				else if (map.ContainsKey(pattern[i]) && rmap.ContainsKey(strArr[i]) && map[pattern[i]] == strArr[i] && rmap[strArr[i]] == pattern[i])
-				{
-					// let it pass, don't want to write the conditions in else {}
-				}
-				else
+				else if (dict1[s[i]] != t[i] || dict2[t[i]] != s[i])
 					return false;
 			}
 			return true;
