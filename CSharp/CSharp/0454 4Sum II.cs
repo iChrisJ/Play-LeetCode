@@ -20,7 +20,6 @@ namespace LeetCodeInCS._0454_4Sum_II
 			}
 
 			int res = 0;
-
 			for (int i = 0; i < A.Length; i++)
 			{
 				for (int j = 0; j < B.Length; j++)
@@ -29,7 +28,6 @@ namespace LeetCodeInCS._0454_4Sum_II
 						res += recrod[0 - A[i] - B[j]];
 				}
 			}
-
 			return res;
 		}
 	}

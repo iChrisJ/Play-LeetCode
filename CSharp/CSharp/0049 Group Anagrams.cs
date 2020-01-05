@@ -7,28 +7,28 @@ namespace LeetCodeInCS._0049_Group_Anagrams
 	{
 		public IList<IList<string>> GroupAnagrams(string[] strs)
 		{
-			Dictionary<string, IList<string>> map = new Dictionary<string, IList<string>>();
+			IList<IList<string>> res = new List<IList<string>>();
+			if (strs == null || strs.Length == 0)
+				return res;
+
+			Dictionary<string, IList<string>> dict = new Dictionary<string, IList<string>>();
 
 			foreach (string str in strs)
 			{
-				char[] keychar = str.ToCharArray();
-				Array.Sort<char>(keychar);
-				string key = new string(keychar);
-				if (map.ContainsKey(key))
-					map[key].Add(str);
+				char[] chars = str.ToCharArray();
+				Array.Sort(chars);
+				string key = new string(chars);
+
+				if (dict.ContainsKey(key))
+					dict[key].Add(str);
 				else
-					map.Add(key, new List<string> { str });
+					dict.Add(key, new List<string> { str });
 			}
 
-			IList<IList<string>> res = new List<IList<string>>();
-			foreach (var item in map)
+			foreach (var item in dict)
 				res.Add(item.Value);
+
 			return res;
 		}
-
-		//static void Main(string[] args)
-		//{
-		//	var a = new Solution().GroupAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
-		//}
 	}
 }

@@ -80,4 +80,46 @@ namespace LeetCodeInCS._0015_3Sum
 			return res;
 		}
 	}
+
+	public class Solution3
+	{
+		public IList<IList<int>> ThreeSum(int[] nums)
+		{
+			IList<IList<int>> res = new List<IList<int>>();
+			if (nums == null || nums.Length <= 2)
+				return res;
+
+			Array.Sort<int>(nums);
+			HashSet<(int, int, int)> resSet = new HashSet<(int, int, int)>();
+
+			// If we can get the lower bound index of 0, then we can reduce the execution time.
+			for (int i = 0; i < nums.Length - 2; i++)
+			{
+				for (int j = nums.Length - 1; j > i; j--)
+				{
+					int l = i + 1, r = j - 1;
+
+					while (l <= r)
+					{
+						int mid = l + (r - l) / 2;
+						int total = nums[i] + nums[mid] + nums[j];
+						if (total > 0)
+							r = mid - 1;
+						else if (total < 0)
+							l = mid + 1;
+						else
+						{
+							resSet.Add((nums[i], nums[mid], nums[j]));
+							break;
+						}
+					}
+				}
+			}
+
+			foreach ((int, int, int) item in resSet)
+				res.Add(new List<int> { item.Item1, item.Item2, item.Item3 });
+
+			return res;
+		}
+	}
 }
