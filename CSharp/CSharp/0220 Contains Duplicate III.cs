@@ -33,13 +33,12 @@ namespace LeetCodeInCS._0220_Contains_Duplicate_III
 			SortedSet<long> set = new SortedSet<long>();
 			for (int i = 0; i < nums.Length; i++)
 			{
+				if (i > k)
+					set.Remove(nums[i - k - 1]);
+
 				if (set.GetViewBetween((long)nums[i] - t, (long)nums[i] + t).Count > 0)
 					return true;
-
 				set.Add(nums[i]);
-
-				if (i >= k)
-					set.Remove(nums[i - k]);
 			}
 			return false;
 		}
