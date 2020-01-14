@@ -53,5 +53,39 @@ namespace LeetCodeInCS._0430_Flatten_a_Multilevel_Doubly_Linked_List
 				return head;
 			}
 		}
+
+		public class Solution2
+		{
+			public Node Flatten(Node head)
+			{
+				if (head == null)
+					return head;
+
+				Node cur = head;
+				Stack<Node> stack = new Stack<Node>();
+
+				while (cur.next != null || cur.child != null || stack.Count != 0)
+				{
+					if (cur.child != null)
+					{
+						if (cur.next != null)
+							stack.Push(cur.next);
+						Node child = cur.child;
+						cur.child = null;
+						cur.next = child;
+						child.prev = cur;
+					}
+					else if (cur.next != null) { }
+					else //stack.Count != 0
+					{
+						Node top = stack.Pop();
+						cur.next = top;
+						top.prev = cur;
+					}
+					cur = cur.next;
+				}
+				return head;
+			}
+		}
 	}
 }

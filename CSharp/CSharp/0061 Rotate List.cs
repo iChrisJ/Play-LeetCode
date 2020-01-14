@@ -14,26 +14,30 @@
 			if (head == null || head.next == null)
 				return head;
 
-			int listLength = 1;
-			ListNode dump = head;
-			while (dump.next != null)
+			int len = 0;
+			ListNode cur = head;
+			ListNode pre = null;
+			while (cur != null)
 			{
-				dump = dump.next;
-				listLength++;
+				len++;
+				pre = cur;
+				cur = cur.next;
 			}
 
-			dump.next = head;
-			int step = listLength - k % listLength;
+			pre.next = head;
+			cur = head;
 
-			while (step != 1)
+			k = k % len;
+			k = len - k;
+			while (k > 0)
 			{
-				head = head.next;
-				step--;
+				pre = cur;
+				cur = cur.next;
+				k--;
 			}
 
-			ListNode ret = head.next;
-			head.next = null;
-			return ret;
+			pre.next = null;
+			return cur;
 		}
 	}
 }
