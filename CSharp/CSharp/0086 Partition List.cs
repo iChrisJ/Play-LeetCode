@@ -14,27 +14,33 @@
 	{
 		public ListNode Partition(ListNode head, int x)
 		{
-			ListNode lHead = new ListNode(0), rHead = new ListNode(0), lCur = lHead, rCur = rHead, cur = head;
+			if (head == null)
+				return null;
+
+			ListNode gt_head = new ListNode(-1), lt_head = new ListNode(-1);
+			ListNode gt_prev = gt_head, lt_prev = lt_head;
+			ListNode cur = head;
 
 			while (cur != null)
 			{
-				ListNode next = cur.next;
-				if (cur.val < x)
+				if (cur.val >= x)
 				{
-					lCur.next = cur;
-					lCur = lCur.next;
-					lCur.next = null;
+					gt_prev.next = cur;
+					gt_prev = gt_prev.next;
+					cur = cur.next;
+					gt_prev.next = null;
 				}
-				else // cur.val >= x
+				else
 				{
-					rCur.next = cur;
-					rCur = rCur.next;
-					rCur.next = null;
+					lt_prev.next = cur;
+					lt_prev = lt_prev.next;
+					cur = cur.next;
+					lt_prev.next = null;
 				}
-				cur = cur.next;
 			}
-			lCur.next = rHead.next;
-			return lHead.next;
+
+			lt_prev.next = gt_head.next;
+			return lt_head.next;
 		}
 	}
 }

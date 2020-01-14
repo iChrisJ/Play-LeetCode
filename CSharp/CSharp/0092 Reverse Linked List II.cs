@@ -12,43 +12,43 @@
 
 	public class Solution
 	{
-		// TODO;
 		public ListNode ReverseBetween(ListNode head, int m, int n)
 		{
-			ListNode preHead = new ListNode(0) { next = head };
+			if (head == null)
+				return null;
 
-			ListNode pre = preHead;
+			ListNode dummy = new ListNode(-1) { next = head };
+			ListNode prev_reverse = dummy, cur = head;
+			ListNode tail_reverse = null, prev = null;
 
-			for (int i = 1; i < m; i++)
-				pre = pre.next;
-
-			ListNode tail = pre.next;
-			ListNode left = tail;
-
-			pre.next = Reverse(pre.next, n - m, left);
-
-			if (left != tail) tail.next = left;
-
-			return preHead.next;
-		}
-
-		private ListNode Reverse(ListNode node, int length, ListNode left)
-		{
-			if (node == null || node.next == null || length == 0)
-				return node;
-
-			ListNode pre = node, cur = node.next;
-
-			while (length > 0)
+			int pos = 1;
+			while (pos <= n)
 			{
-				ListNode next = cur.next;
-				cur.next = pre;
-				pre = cur;
-				cur = next;
-				length--;
+				if (pos < m)
+				{
+					prev_reverse = cur;
+					cur = cur.next;
+				}
+				else if (pos == m)
+				{
+					tail_reverse = cur;
+					prev = cur;
+					cur = cur.next;
+				}
+				else // i is (m, n] 
+				{
+					ListNode next = cur.next;
+					cur.next = prev;
+					prev = cur;
+					cur = next;
+				}
+				pos++;
 			}
-			left = cur;
-			return pre;
+
+			prev_reverse.next = prev;
+			tail_reverse.next = cur;
+			return dummy.next;
+
 		}
 	}
 }
