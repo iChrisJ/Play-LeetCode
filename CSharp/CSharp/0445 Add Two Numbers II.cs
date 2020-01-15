@@ -30,66 +30,34 @@ namespace LeetCodeInCS._0445_Add_Two_Numbers_II
 				l2 = l2.next;
 			}
 
-			bool isPreOverNine = false;
 			Stack<ListNode> stack3 = new Stack<ListNode>();
+			bool isCarried = false;
 			while (stack1.Count != 0 || stack2.Count != 0)
 			{
+				int val = isCarried ? 1 : 0;
 				if (stack1.Count == 0)
-				{
-					ListNode node2 = stack2.Pop();
-					if (isPreOverNine == false)
-					{
-						stack3.Push(new ListNode(node2.val));
-					}
-					else
-					{
-						isPreOverNine = (node2.val + 1) / 10 > 0;
-						stack3.Push(new ListNode((node2.val + 1) % 10));
-					}
-				}
+					val += stack2.Pop().val;
 				else if (stack2.Count == 0)
-				{
-					ListNode node1 = stack1.Pop();
-					if (isPreOverNine == false)
-					{
-						stack3.Push(new ListNode(node1.val));
-					}
-					else
-					{
-						isPreOverNine = (node1.val + 1) / 10 > 0;
-						stack3.Push(new ListNode((node1.val + 1) % 10));
-					}
-				}
+					val += stack1.Pop().val;
 				else
-				{
-					ListNode node1 = stack1.Pop();
-					ListNode node2 = stack2.Pop();
-					if (isPreOverNine == false)
-					{
-						isPreOverNine = (node1.val + node2.val) / 10 > 0;
-						stack3.Push(new ListNode((node1.val + node2.val) % 10));
-					}
-					else
-					{
-						isPreOverNine = (node1.val + node2.val + 1) / 10 > 0;
-						stack3.Push(new ListNode((node1.val + node2.val + 1) % 10));
-					}
-				}
+					val += stack1.Pop().val + stack2.Pop().val;
+
+				isCarried = val / 10 == 1;
+				val = val % 10;
+				stack3.Push(new ListNode(val));
 			}
 
-			if (isPreOverNine == true)
+			if (isCarried)
 				stack3.Push(new ListNode(1));
 
-			ListNode reshead = new ListNode(0);
-			ListNode cur = reshead;
-
+			ListNode dummy = new ListNode(-1);
+			ListNode prev = dummy;
 			while (stack3.Count != 0)
 			{
-				cur.next = stack3.Pop();
-				cur = cur.next;
+				prev.next = stack3.Pop();
+				prev = prev.next;
 			}
-
-			return reshead.next;
+			return dummy.next;
 		}
 	}
 }

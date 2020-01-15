@@ -10,63 +10,90 @@
 		public ListNode(int x) { val = x; }
 	}
 
+	/// <summary>
+	/// 迭代
+	/// </summary>
 	public class Solution
 	{
 		public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
 		{
-			ListNode preRes = new ListNode(0);
-			ListNode cur = preRes;
-			bool isPreOverNine = false;
-			while (l1 != null || l2 != null)
+			if (l1 == null)
+				return l2;
+
+			if (l2 == null)
+				return l1;
+
+			ListNode cur1 = l1, cur2 = l2;
+			ListNode dummy = new ListNode(0);
+			ListNode prev = dummy;
+			bool isCarried = false;
+			while (cur1 != null || cur2 != null)
 			{
-				if (l1 == null)
+				int val = isCarried ? 1 : 0;
+
+				if (cur1 == null)
 				{
-					if (isPreOverNine == false)
-					{
-						cur.next = new ListNode(l2.val);
-					}
-					else
-					{
-						isPreOverNine = (l2.val + 1) / 10 > 0;
-						cur.next = new ListNode((l2.val + 1) % 10);
-					}
-					l2 = l2.next;
+					val += cur2.val;
+					cur2 = cur2.next;
 				}
-				else if (l2 == null)
+				else if (cur2 == null)
 				{
-					if (isPreOverNine == false)
-					{
-						cur.next = new ListNode(l1.val);
-					}
-					else
-					{
-						isPreOverNine = (l1.val + 1) / 10 > 0;
-						cur.next = new ListNode((l1.val + 1) % 10);
-					}
-					l1 = l1.next;
+					val += cur1.val;
+					cur1 = cur1.next;
 				}
 				else
 				{
-					if (isPreOverNine == false)
-					{
-						isPreOverNine = (l1.val + l2.val) / 10 > 0;
-						cur.next = new ListNode((l1.val + l2.val) % 10);
-					}
-					else
-					{
-						isPreOverNine = (l1.val + l2.val + 1) / 10 > 0;
-						cur.next = new ListNode((l1.val + l2.val + 1) % 10);
-					}
-
-					l1 = l1.next;
-					l2 = l2.next;
+					val += cur1.val + cur2.val;
+					cur1 = cur1.next;
+					cur2 = cur2.next;
 				}
 
-				cur = cur.next;
+				ListNode newNode = new ListNode(val % 10);
+				isCarried = val / 10 == 1;
+				prev.next = newNode;
+				prev = prev.next;
 			}
-			if (isPreOverNine == true)
-				cur.next = new ListNode(1);
-			return preRes.next;
+
+			if (isCarried)
+			{
+				ListNode newNode = new ListNode(1);
+				prev.next = newNode;
+			}
+			return dummy.next;
+		}
+	}
+
+	/// <summary>
+	/// 递归
+	/// </summary>
+	public class Solution2
+	{
+		public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+		{
+			return AddTwoNumbers(l1, l2, false);
+		}
+
+		public ListNode AddTwoNumbers(ListNode l1, ListNode l2, bool isCarried)
+		{
+			if (l1 == null && l2 == null)
+				return isCarried ? new ListNode(1) : null;
+
+			int val = (isCarried ? 1 : 0);
+			if (l1 == null)
+				val += l2.val;
+			else if (l2 == null)
+				val += l1.val;
+			else
+				val += l1.val + l2.val;
+
+			isCarried = val >= 10;
+			val = val % 10;
+
+			ListNode res = new ListNode(val)
+			{
+				next = AddTwoNumbers((l1 == null ? null : l1.next), (l2 == null ? null : l2.next), isCarried)
+			};
+			return res;
 		}
 	}
 }
