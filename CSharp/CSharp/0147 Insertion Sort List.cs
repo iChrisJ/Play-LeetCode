@@ -13,36 +13,35 @@
 		{
 			if (head == null || head.next == null)
 				return head;
-			ListNode preHead = new ListNode(0) { next = head };
-			ListNode cur = head.next;
-			ListNode pre = head;
 
-			while (cur != null)
+			ListNode dummy = new ListNode(-1) { next = head };
+			ListNode post_insert = head.next;
+			head.next = null;
+			while (post_insert != null)
 			{
-				ListNode sortedCur = preHead.next;
-				ListNode sortedPre = preHead;
-				ListNode next = cur.next;
-				while (sortedCur != cur)
+				ListNode insert = post_insert;
+				post_insert = post_insert.next;
+
+				ListNode prev = dummy, cur = dummy.next;
+				while (cur != null)
 				{
-					if (sortedCur.val > cur.val)
+					if (cur.val > insert.val)
 					{
-						sortedPre.next = cur;
-						cur.next = sortedCur;
-						pre.next = next;
+						prev.next = insert;
+						insert.next = cur;
 						break;
 					}
-					else
-					{
-						sortedPre = sortedCur;
-						sortedCur = sortedCur.next;
-					}
+					prev = cur;
+					cur = cur.next;
 				}
 
-				if (sortedCur == cur)
-					pre = cur;
-				cur = next;
+				if (cur == null)
+				{
+					prev.next = insert;
+					insert.next = null;
+				}
 			}
-			return preHead.next;
+			return dummy.next;
 		}
 	}
 }

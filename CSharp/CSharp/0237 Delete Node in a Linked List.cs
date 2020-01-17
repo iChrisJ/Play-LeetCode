@@ -15,7 +15,10 @@
 				return;
 
 			if (node.next == null)
+			{
 				node = null;
+				return;
+			}
 
 			ListNode next = node.next;
 			node.val = next.val;
