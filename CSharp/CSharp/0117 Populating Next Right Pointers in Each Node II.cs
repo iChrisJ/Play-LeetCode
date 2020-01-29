@@ -1,7 +1,7 @@
 ﻿namespace LeetCodeInCS._0117_Populating_Next_Right_Pointers_in_Each_Node_II
 {
 	// Definition for a Node.
-	class Node
+	public class Node
 	{
 		public int val;
 		public Node left;
@@ -19,41 +19,38 @@
 		}
 	}
 
-	class Solution
+	public class Solution
 	{
 		public Node Connect(Node root)
 		{
 			if (root == null)
-				return root;
+				return null;
 
-			Node curNext = root.next;
-			Node cousin = null;
-
-			while (curNext != null)
-			{
-				if (curNext.left != null)
-				{
-					cousin = curNext.left;
-					break;
-				}
-
-				if (curNext.right != null)
-				{
-					cousin = curNext.right;
-					break;
-				}
-				curNext = curNext.next;
-			}
-
-			if (root.left != null)
-				root.left.next = root.right == null ? cousin : root.right;
+			Node cousin = NextCousin(root);
 
 			if (root.right != null)
 				root.right.next = cousin;
 
+			if (root.left != null)
+				root.left.next = root.right ?? cousin;
+
 			Connect(root.right); // Make sure the right node it traverse first.
 			Connect(root.left);
 			return root;
+		}
+
+		private Node NextCousin(Node node)
+		{
+			Node next = node.next;
+			while (next != null)
+			{
+				if (next.left != null)
+					return next.left;
+				else if (next.right != null)
+					return next.right;
+				next = next.next;
+			}
+			return null;
 		}
 	}
 }
