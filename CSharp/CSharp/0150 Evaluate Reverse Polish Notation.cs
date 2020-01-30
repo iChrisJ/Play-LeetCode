@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LeetCodeInCS._0150_Evaluate_Reverse_Polish_Notation
 {
@@ -7,48 +6,41 @@ namespace LeetCodeInCS._0150_Evaluate_Reverse_Polish_Notation
 	{
 		public int EvalRPN(string[] tokens)
 		{
-			Stack<int> nums = new Stack<int>();
+			if (tokens == null || tokens.Length == 0)
+				return 0;
 
-			for (int i = 0; i < tokens.Length; i++)
+			Stack<int> stack = new Stack<int>();
+			foreach (string token in tokens)
 			{
-				int num;
-				char oper;
-				if (int.TryParse(tokens[i], out num))
-					nums.Push(num);
-				else if (char.TryParse(tokens[i], out oper))
+				int sec, frst;
+				switch (token)
 				{
-					if (nums.Count <= 1)
-						throw new InvalidOperationException();
-
-					int second = nums.Pop();
-					int first = nums.Pop();
-
-					int val = Calculate(first, second, oper);
-					nums.Push(val);
+					case "+":
+						sec = stack.Pop();
+						frst = stack.Pop();
+						stack.Push(frst + sec);
+						break;
+					case "-":
+						sec = stack.Pop();
+						frst = stack.Pop();
+						stack.Push(frst - sec);
+						break;
+					case "*":
+						sec = stack.Pop();
+						frst = stack.Pop();
+						stack.Push(frst * sec);
+						break;
+					case "/":
+						sec = stack.Pop();
+						frst = stack.Pop();
+						stack.Push(frst / sec);
+						break;
+					default:
+						stack.Push(int.Parse(token));
+						break;
 				}
 			}
-
-			if (nums.Count == 1)
-				return nums.Pop();
-			throw new InvalidOperationException();
-		}
-
-		private int Calculate(int first, int second, char oper)
-		{
-			switch (oper)
-			{
-				case '+':
-					return first + second;
-				case '-':
-					return first - second;
-				case '*':
-					return first * second;
-				case '/':
-					if (second == 0)
-						throw new DivideByZeroException("Cannot be zero");
-					return first / second;
-			}
-			throw new InvalidOperationException("Can't be calculated here.");
+			return stack.Peek();
 		}
 	}
 }

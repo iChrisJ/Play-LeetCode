@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace LeetCodeInCS._0071_Simplify_Path
 {
@@ -6,30 +7,30 @@ namespace LeetCodeInCS._0071_Simplify_Path
 	{
 		public string SimplifyPath(string path)
 		{
-			string[] paths = path.Split("/");
-			Stack<string> pathStack = new Stack<string>();
+			if (path == null || path.Length == 0)
+				return "/";
 
-			for (int i = 0; i < paths.Length; i++)
+			string[] folders = path.Split('/');
+			Stack<string> stack = new Stack<string>();
+
+			foreach (string folder in folders)
 			{
-				if (paths[i] == "." || string.IsNullOrEmpty(paths[i]) || (paths[i] == ".." && pathStack.Count == 0))
+				if (folder == "..")
+				{
+					if (stack.Count > 0)
+						stack.Pop();
+				}
+				else if (folder == "." || string.IsNullOrEmpty(folder))
 					continue;
-				else if (paths[i] == ".." && pathStack.Count > 0)
-					pathStack.Pop();
 				else
-					pathStack.Push(paths[i]);
+					stack.Push(folder);
 			}
 
-			string res = pathStack.Count == 0 ? string.Empty : pathStack.Pop();
-			while (pathStack.Count != 0)
-			{
-				res = pathStack.Pop() + "/" + res;
-			}
-			return "/" + res;
+			StringBuilder res = new StringBuilder();
+			while (stack.Count > 0)
+				res.Insert(0, $"/{stack.Pop()}");
+
+			return res.Length == 0 ? "/" : res.ToString();
 		}
-
-		//public static void Main(string[] args)
-		//{
-		//	var a = new Solution().SimplifyPath("/../");
-		//}
 	}
 }
