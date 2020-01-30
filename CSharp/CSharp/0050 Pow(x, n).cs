@@ -9,31 +9,40 @@
 				x = 1 / x;
 				n = -n;
 			}
-			double res = 1;
-
-			while (n > 0)
-			{
-				if (n == 1)
-					res *= x;
-				x *= x;
-				n = n / 2;
-			}
-
-			return res;
+			return Calc(x, n);
 		}
 
 		private double Calc(double x, int n)
 		{
-			if (n == 1)
-				return x;
-			double res = Calc(x, n / 2);
-			return res * res;
+			if (n == 0)
+				return 1.0;
+
+			double half = Calc(x, n / 2);
+			double res = half * half;
+			return n % 2 == 0 ? res : res * x;
 		}
+	}
 
+	public class Solution2
+	{
+		public double MyPow(double x, int n)
+		{
+			long N = n;
+			if (N < 0)
+			{
+				x = 1 / x;
+				N = -N;
+			}
 
-		//static void Main()
-		//{
-		//	new Solution().MyPow(2, 10);
-		//}
+			double ans = 1.0;
+			double cur_production = x;
+			for (long i = N; i > 0; i /= 2)
+			{
+				if (i % 2 == 1)
+					ans *= cur_production;
+				cur_production = cur_production * cur_production;
+			}
+			return ans;
+		}
 	}
 }

@@ -30,4 +30,26 @@
 			return preHead.next;
 		}
 	}
+
+	public class Solution2
+	{
+		public ListNode SwapPairs(ListNode head)
+		{
+			if (head == null || head.next == null)
+				return head;
+			return Swap(head);
+		}
+
+		private ListNode Swap(ListNode node)
+		{
+			if (node == null || node.next == null)
+				return node;
+
+			ListNode next_pair_head = Swap(node.next.next);
+			ListNode next = node.next;
+			next.next = node;
+			node.next = next_pair_head;
+			return next;
+		}
+	}
 }

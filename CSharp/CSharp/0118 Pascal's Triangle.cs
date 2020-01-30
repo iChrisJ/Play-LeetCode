@@ -23,10 +23,37 @@ namespace LeetCodeInCS._0118_Pascal_s_Triangle
 			}
 			return res;
 		}
+	}
 
-		//public static void Main(string[] args)
-		//{
-		//	var a = new Solution().Generate(5);
-		//}
+	public class Solution2
+	{
+		public IList<IList<int>> Generate(int numRows)
+		{
+			IList<IList<int>> res = new List<IList<int>>();
+			if (numRows <= 0)
+				return res;
+
+			Generate(res, numRows - 1);
+			return res;
+		}
+
+		private void Generate(IList<IList<int>> result, int rowIndex)
+		{
+			if (rowIndex == 0)
+				result.Add(new List<int> { 1 });
+			else
+			{
+				Generate(result, rowIndex - 1);
+				IList<int> line = new List<int>(rowIndex + 1);
+				for (int i = 0; i <= rowIndex; i++)
+				{
+					if (i == 0 || i == rowIndex)
+						line.Add(1);
+					else
+						line.Add(result[rowIndex - 1][i - 1] + result[rowIndex - 1][i]);
+				}
+				result.Add(line);
+			}
+		}
 	}
 }
