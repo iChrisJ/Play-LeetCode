@@ -19,31 +19,30 @@ namespace LeetCodeInCS._0103_Binary_Tree_Zigzag_Level_Order_Traversal
 
 			if (root != null)
 				queue.Enqueue(root);
-			bool isAsc = true;
+			bool isReverse = false;
 			while (queue.Count != 0)
 			{
-				int levelNodeCount = queue.Count;
-				IList<int> nodes = new List<int>();
-				Stack<int> nodeStack = new Stack<int>();
-				for (int i = 0; i < levelNodeCount; i++)
+				int len = queue.Count;
+				IList<int> line = new List<int>();
+				Stack<int> stack = new Stack<int>();
+				for (int i = 0; i < len; i++)
 				{
 					TreeNode front = queue.Dequeue();
 					if (front.left != null)
 						queue.Enqueue(front.left);
 					if (front.right != null)
 						queue.Enqueue(front.right);
-					if (isAsc)
-						nodes.Add(front.val);
+
+					if (isReverse)
+						stack.Push(front.val);
 					else
-						nodeStack.Push(front.val);
+						line.Add(front.val);
 				}
-				if (!isAsc)
-				{
-					while (nodeStack.Count != 0)
-						nodes.Add(nodeStack.Pop());
-				}
-				res.Add(nodes);
-				isAsc = !isAsc;
+				if (isReverse)
+					res.Add(new List<int>(stack));
+				else
+					res.Add(line);
+				isReverse = !isReverse;
 			}
 			return res;
 		}
