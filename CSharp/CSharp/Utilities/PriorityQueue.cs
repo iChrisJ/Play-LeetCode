@@ -55,14 +55,14 @@ namespace LeetCodeInCS.Utilities
 		public T Peek()
 		{
 			if (Count <= 0)
-				throw new AccessViolationException("The priority queue in empty.");
+				throw new InvalidOperationException("The priority queue in empty.");
 			return data[0];
 		}
 
 		public T Dequeue()
 		{
 			if (data.Count <= 0)
-				throw new AccessViolationException("The priority queue in empty.");
+				throw new InvalidOperationException("The priority queue in empty.");
 
 			T res = data[0];
 
