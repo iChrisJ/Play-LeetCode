@@ -8,36 +8,35 @@ namespace LeetCodeInCS._0347_Top_K_Frequent_Elements
 		public IList<int> TopKFrequent(int[] nums, int k)
 		{
 			Dictionary<int, int> freq = new Dictionary<int, int>();
-			for ( int i = 0; i < nums.Length; i++)
+			foreach (int num in nums)
 			{
-				if (freq.ContainsKey(nums[i]))
-					freq[nums[i]]++;
+				if (freq.ContainsKey(num))
+					freq[num]++;
 				else
-					freq.Add(nums[i], 1);
+					freq.Add(num, 1);
 			}
 
-			MinHeap<KeyValuePair<int, int>> minheap = new MinHeap<KeyValuePair<int, int>>(Comparer<KeyValuePair<int, int>>.Create((x, y) => { return x.Key - y.Key; }));
-			foreach (var kv in freq)
+			PriorityQueue<(int, int)> queue = new PriorityQueue<(int, int)>
+				(Comparer<(int, int)>.Create((x, y) => { return y.Item2 - x.Item2; }));
+
+			foreach (KeyValuePair<int, int> kv in freq)
 			{
-				if (minheap.Count < k)
-					minheap.Insert(new KeyValuePair<int, int>(kv.Value, kv.Key));
-				else if (kv.Value > minheap.Top().Key)
+				if (queue.Count < k)
+					queue.Enqueue((kv.Key, kv.Value));
+				else
 				{
-					minheap.ExtractMin();
-					minheap.Insert(new KeyValuePair<int, int>(kv.Value, kv.Key));
+					if (kv.Value > queue.Peek().Item2)
+					{
+						queue.Dequeue();
+						queue.Enqueue((kv.Key, kv.Value));
+					}
 				}
 			}
 
-			int[] res = new int[minheap.Count];
-			for (int i = res.Length - 1; i >= 0; i--)
-				res[i] = minheap.ExtractMin().Value;
-
+			IList<int> res = new List<int>();
+			while (queue.Count > 0)
+				res.Add(queue.Dequeue().Item1);
 			return res;
 		}
-
-		//static void Main(string[] args)
-		//{
-		//	IList<int> aa = new Solution().TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3, 3, 3, 3 }, 2);
-		//}
 	}
 }

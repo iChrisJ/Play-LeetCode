@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LeetCodeInCS.Utilities;
+using System.Collections.Generic;
 
 namespace LeetCodeInCS._0023_Merge_k_Sorted_Lists
 {
@@ -55,6 +56,34 @@ namespace LeetCodeInCS._0023_Merge_k_Sorted_Lists
 				}
 				prev = prev.next;
 				prev.next = null;
+			}
+			return dummy.next;
+		}
+	}
+
+	public class Solution2
+	{
+		public ListNode MergeKLists(ListNode[] lists)
+		{
+			if (lists == null || lists.Length == 0)
+				return null;
+
+			ListNode dummy = new ListNode(-1);
+			ListNode cur = dummy;
+			PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>
+				(Comparer<ListNode>.Create((x, y) => { return y.val - x.val; }));
+			foreach (ListNode node in lists)
+				if (node != null)
+					queue.Enqueue(node);
+
+			while (queue.Count > 0)
+			{
+				ListNode frnt = queue.Dequeue();
+				if (frnt.next != null)
+					queue.Enqueue(frnt.next);
+
+				cur.next = frnt;
+				cur = cur.next;
 			}
 			return dummy.next;
 		}
