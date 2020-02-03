@@ -15,16 +15,11 @@ namespace LeetCodeInCS._0100_Same_Tree
 	{
 		public bool IsSameTree(TreeNode p, TreeNode q)
 		{
-			if (p != null && q != null)
-			{
-				if (p.val != q.val)
-					return false;
-				return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
-			}
-			else if (p == null && q == null)
+			if (p == null && q == null)
 				return true;
-			else
-				return false;
+			else if (p != null && q != null)
+				return p.val == q.val && IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
+			return false;
 		}
 	}
 
@@ -33,31 +28,30 @@ namespace LeetCodeInCS._0100_Same_Tree
 	{
 		public bool IsSameTree(TreeNode p, TreeNode q)
 		{
-			Queue<TreeNode> pQueue = new Queue<TreeNode>();
-			pQueue.Enqueue(p);
-			Queue<TreeNode> qQueue = new Queue<TreeNode>();
-			qQueue.Enqueue(q);
+			Queue<TreeNode> p_queue = new Queue<TreeNode>();
+			p_queue.Enqueue(p);
+			Queue<TreeNode> q_queue = new Queue<TreeNode>();
+			q_queue.Enqueue(q);
 
-			while (pQueue.Count != 0 && qQueue.Count != 0)
+			while (p_queue.Count > 0 && q_queue.Count > 0)
 			{
-				TreeNode pTop = pQueue.Dequeue();
-				TreeNode qTop = qQueue.Dequeue();
+				TreeNode p_frnt = p_queue.Dequeue();
+				TreeNode q_frnt = q_queue.Dequeue();
 
-				if (pTop == null && qTop == null)
+				if (p_frnt == null && q_frnt == null)
 					continue;
-
-				if (pTop != null && qTop != null && pTop.val == qTop.val)
+				else if (p_frnt != null && q_frnt != null && p_frnt.val == q_frnt.val)
 				{
-					pQueue.Enqueue(pTop.left);
-					pQueue.Enqueue(pTop.right);
-					qQueue.Enqueue(qTop.left);
-					qQueue.Enqueue(qTop.right);
-					continue;
+					p_queue.Enqueue(p_frnt.left);
+					p_queue.Enqueue(p_frnt.right);
+					q_queue.Enqueue(q_frnt.left);
+					q_queue.Enqueue(q_frnt.right);
 				}
-				return false;
+				else
+					return false;
 			}
 
-			return pQueue.Count == 0 && qQueue.Count == 0;
+			return p_queue.Count == 0 && q_queue.Count == 0;
 		}
 	}
 }

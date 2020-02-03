@@ -23,45 +23,38 @@ namespace LeetCodeInCS._0111_Minimum_Depth_of_Binary_Tree
 		}
 	}
 
+	/// <summary>
+	/// BFS
+	/// </summary>
 	public class Solution2
 	{
-		// BFS
 		public int MinDepth(TreeNode root)
 		{
 			if (root == null)
 				return 0;
 
-			int left = MinDepthBFS(root.left);
-			int right = MinDepthBFS(root.right);
-			return left == 0 || right == 0 ? left + right + 1 : Math.Min(left, right) + 1;
-
-		}
-
-		private int MinDepthBFS(TreeNode node)
-		{
-			if (node == null)
-				return 0;
-
 			Queue<TreeNode> queue = new Queue<TreeNode>();
-			queue.Enqueue(node);
-			int minDepth = 0;
+			queue.Enqueue(root);
+			int depth = 0;
 
-			while (queue.Count != 0)
+			while (queue.Count > 0)
 			{
-				minDepth++;
-				int count = queue.Count;
-				for (int i = 0; i < count; i++)
+				depth++;
+				int len = queue.Count;
+				while (len > 0)
 				{
-					TreeNode front = queue.Dequeue();
-					if (front.left == null && front.right == null)
-						return minDepth;
-					if (front.left != null)
-						queue.Enqueue(front.left);
-					if (front.right != null)
-						queue.Enqueue(front.right);
+					TreeNode frnt = queue.Dequeue();
+					if (frnt.left == null && frnt.right == null)
+						return depth;
+
+					if (frnt.left != null)
+						queue.Enqueue(frnt.left);
+					if (frnt.right != null)
+						queue.Enqueue(frnt.right);
+					len--;
 				}
 			}
-			return minDepth;
+			return depth;
 		}
 	}
 }
