@@ -16,21 +16,16 @@ namespace LeetCodeInCS._0101_Symmetric_Tree
 		{
 			if (root == null)
 				return true;
-			return IsSymmetricTree(root.left, root.right);
+			return AreSymmetricTrees(root.left, root.right);
 		}
 
-		public bool IsSymmetricTree(TreeNode p, TreeNode q)
+		private bool AreSymmetricTrees(TreeNode p, TreeNode q)
 		{
-			if (p != null && q != null)
-			{
-				if (p.val != q.val)
-					return false;
-				return IsSymmetricTree(p.left, q.right) && IsSymmetricTree(p.right, q.left);
-			}
-			else if (p == null && q == null)
+			if (p == null && q == null)
 				return true;
-			else
-				return false;
+			else if (p != null && q != null)
+				return p.val == q.val && AreSymmetricTrees(p.left, q.right) && AreSymmetricTrees(p.right, q.left);
+			return false;
 		}
 	}
 
@@ -53,15 +48,15 @@ namespace LeetCodeInCS._0101_Symmetric_Tree
 
 				if (l_front == null && r_front == null)
 					continue;
-				else if ((l_front == null && r_front != null) || (l_front != null && r_front == null) || (l_front.val != r_front.val))
-					return false;
-				else // l_front.val == r_front.val
+				else if (l_front != null && r_front != null && l_front.val == r_front.val)
 				{
 					l_queue.Enqueue(l_front.left);
 					l_queue.Enqueue(l_front.right);
 					r_queue.Enqueue(r_front.right);
 					r_queue.Enqueue(r_front.left);
 				}
+				else
+					return false;
 			}
 			return l_queue.Count == 0 && r_queue.Count == 0;
 		}

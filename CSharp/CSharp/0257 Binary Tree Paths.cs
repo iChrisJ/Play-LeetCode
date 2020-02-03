@@ -15,24 +15,31 @@ namespace LeetCodeInCS._0257_Binary_Tree_Paths
 		public IList<string> BinaryTreePaths(TreeNode root)
 		{
 			IList<string> res = new List<string>();
-
 			if (root == null)
 				return res;
+
 			if (root.left == null && root.right == null)
+				res.Add($"{root.val}");
+
+			BinaryTreePaths(root.left, $"{root.val}", res);
+			BinaryTreePaths(root.right, $"{root.val}", res);
+			return res;
+		}
+
+		private void BinaryTreePaths(TreeNode node, string path, IList<string> res)
+		{
+			if (node == null)
+				return;
+
+			path += $"->{node.val}";
+			if (node.left == null && node.right == null)
 			{
-				res.Add(root.val.ToString());
-				return res;
+				res.Add(path); // No need to get a copy of the path, as string of the path is fixed.
+				return;
 			}
 
-			IList<string> leftStrs = BinaryTreePaths(root.left);
-			foreach (var leftStr in leftStrs)
-				res.Add(root.val + "->" + leftStr);
-
-			IList<string> rightStrs = BinaryTreePaths(root.right);
-			foreach (var rightStr in rightStrs)
-				res.Add(root.val + "->" + rightStr);
-
-			return res;;
+			BinaryTreePaths(node.left, path, res);
+			BinaryTreePaths(node.right, path, res);
 		}
 	}
 }

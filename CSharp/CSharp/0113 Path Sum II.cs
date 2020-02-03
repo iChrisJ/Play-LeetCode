@@ -17,26 +17,27 @@ namespace LeetCodeInCS._0113_Path_Sum_II
 			IList<IList<int>> res = new List<IList<int>>();
 			if (root == null)
 				return res;
-			if (root.left == null && root.right == null && root.val == sum)
-			{
-				res.Add(new List<int> { root.val });
-				return res;
-			}
-
-			IList<IList<int>> leftArr = PathSum(root.left, sum - root.val);
-			foreach (var left in leftArr)
-			{
-				left.Insert(0, root.val);
-				res.Add(left);
-			}
-
-			IList<IList<int>> rightArr = PathSum(root.right, sum - root.val);
-			foreach (var right in rightArr)
-			{
-				right.Insert(0, root.val);
-				res.Add(right);
-			}
+			PathSum(root, sum, new List<int>(), res);
 			return res;
+		}
+
+		private void PathSum(TreeNode node, int sum, IList<int> path, IList<IList<int>> res)
+		{
+			if (node == null)
+				return;
+
+			sum -= node.val;
+			path.Add(node.val);
+
+			if (node.left == null && node.right == null && sum == 0)
+			{
+				res.Add(path);
+				return;
+			}
+
+			IList<int> right_path = new List<int>(path);
+			PathSum(node.left, sum, path, res);
+			PathSum(node.right, sum, right_path, res);
 		}
 	}
 }
