@@ -14,23 +14,20 @@
 		{
 			if (nums == null || nums.Length == 0)
 				return null;
-
-			int mid = (nums.Length - 1) / 2;
-			TreeNode root = new TreeNode(nums[mid]);
-			root.left = GenerateTree(nums, 0, mid - 1);
-			root.right = GenerateTree(nums, mid + 1, nums.Length - 1);
-			return root;
+			return SortedArrayToBST(nums, 0, nums.Length - 1);
 		}
 
-		private TreeNode GenerateTree(int[] list, int l, int r)
+		private TreeNode SortedArrayToBST(int[] nums, int l, int r)
 		{
 			if (l > r)
 				return null;
+
 			int mid = l + (r - l) / 2;
-			TreeNode node = new TreeNode(list[mid]);
-			node.left = GenerateTree(list, l, mid - 1);
-			node.right = GenerateTree(list, mid + 1, r);
-			return node;
+			return new TreeNode(nums[mid])
+			{
+				left = SortedArrayToBST(nums, l, mid - 1),
+				right = SortedArrayToBST(nums, mid + 1, r)
+			};
 		}
 	}
 }
