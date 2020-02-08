@@ -4,31 +4,30 @@ namespace LeetCodeInCS._0077_Combinations
 {
 	public class Solution
 	{
-		public IList<IList<int>> Result { get; private set; }
+		private IList<IList<int>> res;
+
 		public IList<IList<int>> Combine(int n, int k)
 		{
-			Result = new List<IList<int>>();
-
+			res = new List<IList<int>>();
 			if (n <= 0 || k <= 0 || k > n)
-				return Result;
-
-			GenerateCombination(n, k, 1, new List<int>());
-			return Result;
+				return res;
+			Combine(n, k, 1, new List<int>());
+			return res;
 		}
 
-		private void GenerateCombination(int n, int k, int start, List<int> list)
+		private void Combine(int n, int k, int start, IList<int> c)
 		{
-			if (k == list.Count)
+			if (c.Count == k)
 			{
-				Result.Add(new List<int>(list));
+				res.Add(new List<int>(c));
 				return;
 			}
 
-			for (int i = start; i <= n - (k - list.Count) + 1; i++)
+			for (int i = start; i <= n - (k - c.Count) + 1; i++)
 			{
-				list.Add(start);
-				GenerateCombination(n, k, start + 1, list);
-				list.RemoveAt(list.Count - 1);
+				c.Add(i);
+				Combine(n, k, i + 1, c);
+				c.RemoveAt(c.Count - 1);
 			}
 		}
 	}

@@ -5,42 +5,36 @@ namespace LeetCodeInCS._0040_Combination_Sum_II
 {
 	public class Solution
 	{
-		public IList<IList<int>> Result { get; set; }
-
+		private IList<IList<int>> res;
 		public IList<IList<int>> CombinationSum2(int[] candidates, int target)
 		{
-			Result = new List<IList<int>>();
-			if (candidates.Length == 0 || target <= 0)
-				return Result;
+			res = new List<IList<int>>();
+			if (candidates == null || candidates.Length == 0 || target <= 0)
+				return res;
 			Array.Sort<int>(candidates);
-			FindCombinations(candidates, 0, target, new List<int>());
-			return Result;
+			FindCombinations(candidates, target, 0, new List<int>());
+			return res;
 		}
 
-		private void FindCombinations(int[] nums, int start, int target, IList<int> list)
+		private void FindCombinations(int[] candidates, int target, int start, IList<int> c)
 		{
-			if (target == 0 && list.Count > 0)
+			if (target == 0)
 			{
-				Result.Add(new List<int>(list));
+				res.Add(new List<int>(c));
 				return;
 			}
 
-			for (int i = start; i < nums.Length; i++)
+			for (int i = start; i < candidates.Length; i++)
 			{
-				if (i > start && nums[i] == nums[i - 1])
-					continue;
-				if (target - nums[i] >= 0)
+				if (target >= candidates[i])
 				{
-					list.Add(nums[i]);
-					FindCombinations(nums, i + 1, target - nums[i], list);
-					list.RemoveAt(list.Count - 1);
+					c.Add(candidates[i]);
+					FindCombinations(candidates, target - candidates[i], i + 1, c);
+					c.RemoveAt(c.Count - 1);
+					while (i + 1 < candidates.Length && candidates[i] == candidates[i + 1])
+						i++;
 				}
 			}
 		}
-
-		//public static void Main()
-		//{
-		//	var aa = new Solution().CombinationSum2(new int[] { 5, 3, 2, 4, 2, 5, 2, 4, 3 }, 8);
-		//}
 	}
 }

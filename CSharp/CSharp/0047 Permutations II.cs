@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace LeetCodeInCS._0046_Permutations
+namespace LeetCodeInCS._0047_Permutations_II
 {
 	public class Solution
 	{
 		private IList<IList<int>> res;
 
-		public IList<IList<int>> Permute(int[] nums)
+		public IList<IList<int>> PermuteUnique(int[] nums)
 		{
 			res = new List<IList<int>>();
 			if (nums == null || nums.Length == 0)
 				return res;
-
+			Array.Sort<int>(nums);
 			bool[] used = new bool[nums.Length];
 			Permute(nums, new List<int>(), used);
 			return res;
@@ -34,6 +35,9 @@ namespace LeetCodeInCS._0046_Permutations
 					Permute(nums, p, used);
 					used[i] = false;
 					p.RemoveAt(p.Count - 1);
+					// Move index to the last position of the dup num.
+					while (i + 1 < nums.Length && nums[i] == nums[i + 1])
+						i++;
 				}
 			}
 		}
