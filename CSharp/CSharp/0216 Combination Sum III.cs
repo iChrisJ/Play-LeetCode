@@ -4,39 +4,35 @@ namespace LeetCodeInCS._0216_Combination_Sum_III
 {
 	public class Solution
 	{
-		public IList<IList<int>> Result { get; set; }
+		private IList<IList<int>> res;
 
 		public IList<IList<int>> CombinationSum3(int k, int n)
 		{
-			Result = new List<IList<int>>();
-			if (k <= 0 || n <= 0)
-				return Result;
-			FindCombinations(k, 1, n, new List<int>());
-			return Result;
+			res = new List<IList<int>>();
+			if (k <= 0 || k > 9 || n <= 0 || n > 45)
+				return res;
+			FindCombinations(k, n, 1, new List<int>());
+			return res;
 		}
 
-		private void FindCombinations(int k, int start, int target, IList<int> list)
+		private void FindCombinations(int k, int target, int start, IList<int> c)
 		{
-			if (target == 0 && k == 0)
+			if (c.Count == k)
 			{
-				Result.Add(new List<int>(list));
+				if (target == 0)
+					res.Add(new List<int>(c));
 				return;
 			}
 
-			for (int i = start; i <= 9; i++)
+			for (int i = start; i <= 9 - (k - c.Count) + 1; i++)
 			{
-				if (k > 0 && target >= i)
+				if (target >= i)
 				{
-					list.Add(i);
-					FindCombinations(k - 1, i + 1, target - i, list);
-					list.RemoveAt(list.Count - 1);
+					c.Add(i);
+					FindCombinations(k, target - i, i + 1, c);
+					c.RemoveAt(c.Count - 1);
 				}
 			}
 		}
-
-		//public static void Main()
-		//{
-		//	var aa = new Solution().CombinationSum3(3, 9);
-		//}
 	}
 }
