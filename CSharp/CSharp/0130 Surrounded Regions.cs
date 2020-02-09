@@ -2,6 +2,48 @@
 
 namespace LeetCodeInCS._0130_Surrounded_Regions
 {
+	public class Solution2
+	{
+		private int[,] d = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
+
+		public void Solve(char[][] board)
+		{
+			if (board == null || board.Length == 0 || board[0] == null || board[0].Length == 0)
+				return;
+
+			for (int i = 0; i < board.Length; i++)
+				for (int j = 0; j < board[0].Length; j++)
+					if ((i == 0 || i == board.Length - 1 || j == 0 || j == board[0].Length - 1) && board[i][j] == 'O')
+						DFS(board, i, j);
+
+			for (int i = 0; i < board.Length; i++)
+			{
+				for (int j = 0; j < board[0].Length; j++)
+				{
+					if (board[i][j] == '#')
+						board[i][j] = 'O';
+					else if (board[i][j] == 'O')
+						board[i][j] = 'X';
+				}
+			}
+		}
+
+		private void DFS(char[][] board, int x, int y)
+		{
+			if (board[x][y] == 'O')
+			{
+				board[x][y] = '#';
+				for (int i = 0; i < 4; i++)
+				{
+					int newx = x + d[i, 0];
+					int newy = y + d[i, 1];
+					if (newx >= 0 && newx < board.Length && newy >= 0 && newy < board[0].Length && board[newx][newy] == 'O')
+						DFS(board, newx, newy);
+				}
+			}
+		}
+	}
+
 	public class Solution
 	{
 		private int[,] d = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
