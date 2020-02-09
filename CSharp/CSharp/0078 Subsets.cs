@@ -4,27 +4,24 @@ namespace LeetCodeInCS._0078_Subsets
 {
 	public class Solution
 	{
-		public IList<IList<int>> Result { get; set; }
-
+		private IList<IList<int>> res;
 		public IList<IList<int>> Subsets(int[] nums)
 		{
-			Result = new List<IList<int>>();
-
-			if (nums == null)
-				return Result;
-			FindSubSets(nums, 0, new List<int>());
-			return Result;
+			res = new List<IList<int>>();
+			if (nums == null || nums.Length == 0)
+				return res;
+			FindSubset(nums, 0, new List<int>());
+			return res;
 		}
 
-		public void FindSubSets(int[] nums, int start, IList<int> list)
+		private void FindSubset(int[] nums, int start, IList<int> subset)
 		{
-			Result.Add(new List<int>(list));
-
+			res.Add(new List<int>(subset));
 			for (int i = start; i < nums.Length; i++)
 			{
-				list.Add(nums[i]);
-				FindSubSets(nums, i + 1, list);
-				list.RemoveAt(list.Count - 1);
+				subset.Add(nums[i]);
+				FindSubset(nums, i + 1, subset);
+				subset.RemoveAt(subset.Count - 1);
 			}
 		}
 	}
