@@ -5,40 +5,50 @@ namespace LeetCodeInCS._0052_N_Queens_II
 	// Almost same as the leetcode 51 and easier than it.
 	public class Solution
 	{
-		private bool[] col, dia1, dia2;
-
-		public int Result { get; set; }
+		private bool[] col, dial, back_dial;
+		private int res;
 
 		public int TotalNQueens(int n)
 		{
-			Result = 0;
+			res = 0;
+			if (n <= 0)
+				return res;
+
 			col = new bool[n];
-			dia1 = new bool[2 * n - 1];
-			dia2 = new bool[2 * n - 1];
+			dial = new bool[2 * n - 1];
+			back_dial = new bool[2 * n - 1];
 			PutQueen(n, 0, new List<int>());
-			return Result;
+			return res;
 		}
 
-		private void PutQueen(int n, int index, IList<int> row)
+		/// <summary>
+		/// Backtracking to find available postion for queens.
+		/// </summary>
+		/// <param name="n">The number of queens.</param>
+		/// <param name="x">The line to put queen.</param>
+		/// <param name="row">The column of queen in each row.</param>
+		private void PutQueen(int n, int x, IList<int> row)
 		{
-			if (index == n)
+			if (x == n)
 			{
-				Result++;
+				res++;
 				return;
 			}
 
-			for (int i = 0; i < n; i++)
+			for (int y = 0; y < n; y++)
 			{
-				if (!col[i] && !dia1[index + i] && !dia2[index - i + n - 1])
+				if (!col[y] && !dial[x + y] && !back_dial[x - y + n - 1])
 				{
-					row.Add(i);
-					col[i] = true;
-					dia1[index + i] = true;
-					dia2[index - i + n - 1] = true;
-					PutQueen(n, index + 1, row);
-					col[i] = false;
-					dia1[index + i] = false;
-					dia2[index - i + n - 1] = false;
+					row.Add(y);
+					col[y] = true;
+					dial[x + y] = true;
+					back_dial[x - y + n - 1] = true;
+
+					PutQueen(n, x + 1, row);
+
+					back_dial[x - y + n - 1] = false;
+					dial[x + y] = false;
+					col[y] = false;
 					row.RemoveAt(row.Count - 1);
 				}
 			}
