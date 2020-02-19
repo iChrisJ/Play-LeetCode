@@ -35,12 +35,12 @@ namespace LeetCodeInCS._0070_Climbing_Stairs
 		// Dynamic programming
 		public int ClimbStairs(int n)
 		{
-			int[] memo = new int[n + 1];
-			memo[0] = 1;
-			memo[1] = 1;
+			int[] dp = new int[n + 1];
+			dp[0] = 1;
+			dp[1] = 1;
 			for (int i = 2; i <= n; i++)
-				memo[i] = memo[i - 1] + memo[i - 2];
-			return memo[n];
+				dp[i] = dp[i - 1] + dp[i - 2];
+			return dp[n];
 		}
 
 		public int ClimbStairs2(int n)
@@ -48,13 +48,13 @@ namespace LeetCodeInCS._0070_Climbing_Stairs
 			if (n == 1 || n == 2)
 				return n;
 
-			int[] memo = new int[3];
-			memo[1] = 1;
-			memo[2] = 2;
+			int[] dp = new int[3];
+			dp[1] = 1;
+			dp[2] = 2;
 
 			for (int i = 3; i <= n; i++)
-				memo[i % 3] = memo[(i - 1) % 3] + memo[(i - 2) % 3];
-			return memo[n % 3];
+				dp[i % 3] = dp[(i - 1) % 3] + dp[(i - 2) % 3];
+			return dp[n % 3];
 		}
 	}
 }

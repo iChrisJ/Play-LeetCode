@@ -35,14 +35,12 @@ namespace LeetCodeInCS._0120_Triangle
 			if (triangle == null || triangle.Count == 0)
 				return 0;
 
-			int[] dp = new int[triangle[triangle.Count - 1].Count];
-			triangle[triangle.Count - 1].CopyTo(dp, 0);
+			int[] dp = new int[triangle[triangle.Count - 1].Count + 1];
+			Array.Fill<int>(dp, 0);
 
-			for (int i = triangle.Count - 2; i >= 0; i--)
-			{
+			for (int i = triangle.Count - 1; i >= 0; i--)
 				for (int j = 0; j < triangle[i].Count; j++)
 					dp[j] = triangle[i][j] + Math.Min(dp[j], dp[j + 1]);
-			}
 
 			return dp[0];
 		}
