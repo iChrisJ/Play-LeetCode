@@ -1,4 +1,6 @@
-﻿namespace LeetCodeInCS._0062_Unique_Paths
+﻿using System;
+
+namespace LeetCodeInCS._0062_Unique_Paths
 {
 	public class Solution
 	{
@@ -50,13 +52,16 @@
 		/// Space Complexity: O(m)
 		public int UniquePaths2(int m, int n)
 		{
-			int[] dp = new int[m];
-			for (int i = 0; i < m; i++)
-				dp[i] = 1;
-			for (int i = 1; i < n; i++)
-				for (int j = 1; j < m; j++)
-					dp[j] = dp[j - 1] + dp[j];
-			return dp[m - 1];
+			if (m <= 0 || n <= 0)
+				return 0;
+
+			int[] dp = new int[n];
+			Array.Fill<int>(dp, 1);
+
+			for (int i = 1; i < m; i++)
+				for (int j = 1; j < n; j++)
+					dp[j] += dp[j - 1];
+			return dp[n - 1];
 		}
 	}
 }

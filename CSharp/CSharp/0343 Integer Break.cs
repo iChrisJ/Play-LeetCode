@@ -25,18 +25,20 @@ namespace LeetCodeInCS._0343_Integer_Break
 			}
 			return res;
 		}
+	}
 
-
+	public class Solution2
+	{
 		private int[] memo;
-		public int IntegerBreak2(int n)
+		public int IntegerBreak(int n)
 		{
 			if (n == 1)
 				return 1;
 			memo = new int[n + 1];
-			return BreakInteger2(n);
+			return BreakInteger(n);
 		}
 
-		private int BreakInteger2(int n)
+		private int BreakInteger(int n)
 		{
 			if (n == 1)
 				memo[1] = 1;
@@ -53,20 +55,23 @@ namespace LeetCodeInCS._0343_Integer_Break
 			memo[n] = res;
 			return memo[n];
 		}
+	}
 
-		// Dynamic Programming
-		public int IntegerBreak3(int n)
+	// Dynamic Programming
+	public class Solution3
+	{
+		public int IntegerBreak(int n)
 		{
-			int[] memo = new int[n + 1];
-			memo[1] = 1;
+			if (n <= 0)
+				return 0;
+
+			int[] dp = new int[n + 1];
+			dp[1] = 1;
+
 			for (int i = 2; i <= n; i++)
-			{
-				for (int j = 1; j < i; j++)
-				{
-					memo[i] = Math.Max(Math.Max(memo[i], j * (i - j)), j * memo[i - j]);
-				}
-			}
-			return memo[n];
+				for (int j = 1; j + j <= i; j++)
+					dp[i] = Math.Max(dp[i], Math.Max(j * (i - j), j * dp[i - j]));
+			return dp[n];
 		}
 	}
 }
