@@ -24,9 +24,8 @@ namespace LeetCodeInCS._0198_House_Robber
 
 			int res = 0;
 			for (int i = index; i < nums.Length; i++)
-			{
 				res = Math.Max(res, nums[i] + TryRob(nums, i + 2));
-			}
+
 			memo[index] = res;
 			return res;
 		}
@@ -39,29 +38,15 @@ namespace LeetCodeInCS._0198_House_Robber
 	{
 		public int Rob(int[] nums)
 		{
-			if (nums.Length == 0)
+			if (nums == null || nums.Length == 0)
 				return 0;
-			int[] memo = new int[nums.Length];
-			Array.Fill<int>(memo, -1);
 
-			memo[nums.Length - 1] = nums[nums.Length - 1];
-			for (int i = nums.Length - 2; i >= 0; i--)
-				for (int j = i; j < nums.Length; j++)
-					memo[i] = Math.Max(memo[i], nums[j] + (j + 2 < nums.Length ? memo[j + 2] : 0));
-			return memo[0];
-		}
+			int[] dp = new int[nums.Length];
+			dp[0] = nums[0];
 
-		public int Rob2(int[] nums)
-		{
-			if (nums.Length == 0)
-				return 0;
-			int[] memo = new int[nums.Length];
-			Array.Fill<int>(memo, -1);
-
-			memo[0] = nums[0];
 			for (int i = 1; i < nums.Length; i++)
-				memo[i] = Math.Max(memo[i - 1], nums[i] + (i - 2 >= 0 ? memo[i - 2] : 0));
-			return memo[nums.Length - 1];
+				dp[i] = Math.Max(dp[i - 1], nums[i] + (i - 2 >= 0 ? dp[i - 2] : 0));
+			return dp[nums.Length - 1];
 		}
 	}
 }

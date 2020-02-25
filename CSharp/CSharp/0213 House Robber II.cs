@@ -19,19 +19,13 @@ namespace LeetCodeInCS._0213_House_Robber_II
 		{
 			if (end < start)
 				return 0;
-			if (end == start)
-				return nums[start];
-			int[] memo = new int[end - start + 1];
-			memo[0] = nums[start];
 
-			for (int i = start + 1; i <= end; i++)
-				memo[i - start] = Math.Max(memo[i - start - 1], nums[i] + (i - 2 >= start ? memo[i - start - 2] : 0));
-			return memo[end - start];
+			int[] dp = new int[end - start + 1];
+			dp[0] = nums[start];
+
+			for (int i = 1; i <= end - start; i++)
+				dp[i] = Math.Max(dp[i - 1], nums[start + i] + (i >= 2 ? dp[i - 2] : 0));
+			return dp[end - start];
 		}
-
-		//public static void Main()
-		//{
-		//	var res = new Solution().Rob(new int[] { 2, 7, 9, 3, 1 });
-		//}
 	}
 }
