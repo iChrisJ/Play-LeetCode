@@ -55,16 +55,10 @@
 			memo[index, C] = (TryPartition(nums, index - 1, C) || TryPartition(nums, index - 1, C - nums[index])) == true ? 2 : 1;
 			return memo[index, C] == 2;
 		}
-
-		//public static void Main()
-		//{
-		//	var res = new Solution2().CanPartition(new int[] { 1, 2, 5 });
-		//}
 	}
 
 	public class Solution3
 	{
-		private bool[] memo;
 		public bool CanPartition(int[] nums)
 		{
 			int sum = 0;
@@ -74,23 +68,16 @@
 			if (sum % 2 > 0)
 				return false;
 
-			int n = nums.Length;
 			int C = sum / 2;
-			memo = new bool[C + 1];
+			bool[] dp = new bool[C + 1];
+			if (C >= nums[0])
+				dp[nums[0]] = true;
 
-			for (int j = 0; j <= C; j++)
-				memo[j] = nums[0] == j ? true : false;
-
-			for (int i = 1; i < n; i++)
+			for (int i = 1; i < nums.Length; i++)
 				for (int j = C; j >= nums[i]; j--)
-					memo[j] = memo[j] || memo[j - nums[i]] ? true : false;
+					dp[j] = dp[j] || dp[j - nums[i]];
 
-			return memo[C];
+			return dp[C];
 		}
-
-		//public static void Main()
-		//{
-		//	var res = new Solution2().CanPartition(new int[] { 1, 2, 5 });
-		//}
 	}
 }
